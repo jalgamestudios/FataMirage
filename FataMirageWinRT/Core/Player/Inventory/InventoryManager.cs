@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,38 +7,80 @@ using System.Threading.Tasks;
 
 namespace FataMirageWinRT.Core.Player.Inventory
 {
-    class InventoryManager
+    static class InventoryManager
     {
-        public static Graphics.Texture leftSide, rightSide, itemHighlight, noItem;
+        /// <summary>
+        /// A number indicating how much of the inventory is currently vertically revealed.
+        /// <example>0.25 means that one fourth of the inventory is visible, while the rest is too high</example>
+        /// </summary>
         public static float inventoryShowed = 0;
+        /// <summary>
+        /// How much of the inventory will be showed after the end fo the animation
+        /// </summary>
         public static float inventoryShowedGoal = 1;
-        public static float inventoryShowSpeed = 4;
-        public static int inventoryHeight = 8 / 90;
+        
         public static void Init()
         {
+            inventoryShowedGoal = 1;
         }
         public static void LoadContent()
         {
-            //leftSide = new Graphics.Texture("");
         }
         public static void Update(float elapsedTime)
         {
+            if (Input.InputManager.pointerState == Input.InputManager.PointerStates.Click)
+            {
+                var relativePosition = Graphics.Scaler.screenToWorld(Input.InputManager.pointerX, Input.InputManager.pointerY);
+                if (InventoryConfig.getexpanderBounds().Contains(relativePosition.X, relativePosition.Y))
+                {
+                    switch ((int)inventoryShowedGoal)
+                    {
+                        case 0: inventoryShowedGoal = 1; break;
+                        case 1: inventoryShowedGoal = 0; break;
+                    }
+                    Input.InputManager.pointerState = Input.InputManager.PointerStates.Hover;
+                }
+            }
             if (inventoryShowedGoal < inventoryShowed)
             {
-                inventoryShowed -= inventoryShowSpeed * elapsedTime;
-                if (inventoryShowed >= inventoryShowedGoal)
+                inventoryShowed -= InventoryConfig.collapseSpeed * elapsedTime;
+                if (inventoryShowedGoal >=inventoryShowed)
                     inventoryShowed = inventoryShowedGoal;
             }
             else if (inventoryShowedGoal > inventoryShowed)
             {
-                inventoryShowed += inventoryShowSpeed * elapsedTime;
-                if (inventoryShowed <= inventoryShowedGoal)
+                inventoryShowed += InventoryConfig.collapseSpeed * elapsedTime;
+                if (inventoryShowedGoal <= inventoryShowed)
                     inventoryShowed = inventoryShowedGoal;
             }
         }
         public static void Draw(float elapsedTime)
         {
-            //Graphics.Scaler.Draw()
+            if (InventoryConfig.hasLeft)
+            {
+                var leftBounds = InventoryConfig.getLeftSideBounds();
+                Graphics.Scaler.Draw(InventoryTextures.leftSide.texture,
+                    leftBounds.X, leftBounds.Y, leftBounds.Width, leftBounds.Height, 0);
+            }
+            for (int i = 0; i < InventoryConfig.InventoryWidth.width; i++)
+            {
+                var bounds = InventoryConfig.getBounds(i);
+                Graphics.Scaler.Draw(InventoryTextures.itemHighlight.texture,
+                    bounds.X, bounds.Y, bounds.Width, bounds.Height, 0);
+            }
+            if (InventoryConfig.hasRight)
+            {
+                var rightBounds = InventoryConfig.getRightSideBounds();
+                Graphics.Scaler.Draw(InventoryTextures.rightSide.texture,
+                    rightBounds.X, rightBounds.Y, rightBounds.Width, rightBounds.Height, 0);
+            }
+            var expanderBounds = InventoryConfig.getexpanderBounds();
+            Graphics.Scaler.Draw(InventoryTextures.collapser.texture,
+                expanderBounds.X, expanderBounds.Y,
+                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, 1 - inventoryShowed), 0);
+            Graphics.Scaler.Draw(InventoryTextures.expander.texture,
+                expanderBounds.X, expanderBounds.Y,
+                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, inventoryShowed), 0);
         }
     }
 }
