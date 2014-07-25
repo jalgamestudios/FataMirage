@@ -31,5 +31,23 @@ namespace FataMirageWinRT.Core.Graphics
             texture.GetData<Color>(colors1D);
             return colors1D;
         }
+        /// <summary>
+        /// Returns the width of the texture when displayed at the given height so the aspect ratio is conserved
+        /// </summary>
+        /// <param name="height">The height at which the texture is drawn</param>
+        /// <returns>The width, measured in the same unit as height</returns>
+        public float getWidthByHeight(float height)
+        {
+            return texture.Width / (float)texture.Height * height;
+        }
+        /// <summary>
+        /// Returns the height of the texture when displayed at the given width so the aspect ratio is conserved
+        /// </summary>
+        /// <param name="width">The width at which the texture is drawn</param>
+        /// <returns>The width, measured in the same unit as height</returns>
+        public float getHeightByWidth(float width)
+        {
+            return texture.Height / (float)texture.Width * width;
+        }
     }
 }

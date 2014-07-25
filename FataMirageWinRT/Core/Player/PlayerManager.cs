@@ -23,6 +23,7 @@ namespace FataMirageWinRT.Core.Player
         public static void Update(float elapsedTime)
         {
             Legs.Update(elapsedTime);
+            Inventory.InventoryManager.Update(elapsedTime);
             if (Input.InputManager.pointerState == Input.InputManager.PointerStates.Click)
             {
                 if (!Player.Legs.isWalking)
@@ -36,9 +37,9 @@ namespace FataMirageWinRT.Core.Player
                         Player.Legs.currentGoal = goal;
                         Player.Legs.isWalking = true;
                     }
+                    Input.InputManager.pointerState = Input.InputManager.PointerStates.Hover;
                 }
             }
-            Inventory.InventoryManager.Update(elapsedTime);
         }
         public static void Draw(float elapsedTime)
         {

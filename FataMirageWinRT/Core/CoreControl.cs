@@ -17,6 +17,7 @@ namespace FataMirageWinRT.Core
         public static void LoadContent()
         {
             Game.LoadMeta.Load();
+            Game.LoadUI.Load();
             Scene.SceneLoader.LoadScenes();
             Player.PlayerManager.LoadContent();
         }

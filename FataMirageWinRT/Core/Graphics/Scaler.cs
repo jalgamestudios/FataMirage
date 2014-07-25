@@ -12,14 +12,18 @@ namespace FataMirageWinRT.Core.Graphics
     {
         public static void Draw(Texture2D texture, float x, float y, float width, float height, float depth)
         {
+            Draw(texture, x, y, width, height, Color.White, depth);
+        }
+        public static void Draw(Texture2D texture, float x, float y, float width, float height, Color color, float depth)
+        {
             if (Settings.actualScreenWidth / Settings.actualScreenHeight < (Settings.renderWidth / (float)Settings.renderHeight))
             {
                 Stator.spriteBatch.Draw(texture, new Rectangle((int)(x * Settings.actualScreenWidth),
                     (int)((Settings.actualScreenHeight - Settings.actualScreenWidth / (Settings.renderWidth / (float)Settings.renderHeight)) / 2 + y * Settings.actualScreenWidth),
-                    (int)(width * Settings.actualScreenWidth),
-                    (int)(height * Settings.actualScreenWidth)),
+                    (int)(width * Settings.actualScreenWidth) + 1,
+                    (int)(height * Settings.actualScreenWidth) + 1),
                     null,
-                    Color.White,
+                    color,
                     0,
                     new Vector2(0, 0),
                     SpriteEffects.None,
@@ -29,10 +33,10 @@ namespace FataMirageWinRT.Core.Graphics
             {
                 Stator.spriteBatch.Draw(texture, new Rectangle((int)((Settings.actualScreenWidth - Settings.actualScreenHeight * (Settings.renderWidth / (float)Settings.renderHeight)) / 2 + x * Settings.actualScreenHeight),
                     (int)(y * Settings.actualScreenHeight),
-                    (int)(width * Settings.actualScreenHeight),
-                    (int)(height * Settings.actualScreenHeight)),
+                    (int)(width * Settings.actualScreenHeight) + 1,
+                    (int)(height * Settings.actualScreenHeight) + 1),
                     null,
-                    Color.White,
+                    color,
                     0,
                     new Vector2(0, 0),
                     SpriteEffects.None,

@@ -150,7 +150,10 @@
     <Compile Include="Core\Input\InputManager.cs" />
     <Compile Include="Core\Input\Settings.cs" />
     <Compile Include="Core\Input\Touch.cs" />
+    <Compile Include="Core\Player\Inventory\InventoryAlign.cs" />
+    <Compile Include="Core\Player\Inventory\InventoryConfig.cs" />
     <Compile Include="Core\Player\Inventory\InventoryManager.cs" />
+    <Compile Include="Core\Player\Inventory\InventoryTextures.cs" />
     <Compile Include="Core\Player\Inventory\Item.cs" />
     <Compile Include="Core\Player\PlayerManager.cs" />
     <Compile Include="Core\Player\Legs.cs" />
@@ -168,6 +171,7 @@
     <Compile Include="Core\Scene\SceneState.cs" />
     <Compile Include="Core\Scene\Storage\LoadScene.cs" />
     <Compile Include="Core\Scene\Storage\SaveScene.cs" />
+    <Compile Include="Debugging\Logger.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
@@ -176,7 +180,7 @@
     <Compile Include="Stator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AppxManifest Include="Libs\Package.appxmanifest">
+    <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="FataMirageWinRT_TemporaryKey.pfx" />
@@ -268,6 +272,7 @@
     <Content Include="Game\UI\Inventory\InventoryRight.png" />
     <Content Include="Libs\MonoGame.Framework.dll" />
     <Content Include="Libs\MonoGame.Framework.XML" />
+    <Content Include="Libs\MonogameLicense.txt" />
     <Content Include="Libs\SharpDX.D3DCompiler.dll" />
     <Content Include="Libs\SharpDX.D3DCompiler.xml" />
     <Content Include="Libs\SharpDX.Direct2D1.dll" />
@@ -284,6 +289,7 @@
     <Content Include="Libs\SharpDX.XInput.dll" />
     <Content Include="Libs\SharpDX.XInput.xml" />
     <Content Include="Libs\SharpDX.xml" />
+    <Content Include="Libs\SharpDX_License.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Audio\" />
