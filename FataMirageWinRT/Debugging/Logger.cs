@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FataMirageWinRT.Debugging
+namespace FataMirage.Debugging
 {
     class Logger
     {

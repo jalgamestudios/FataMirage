@@ -9,10 +9,10 @@ using System.IO;
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Content;
 
-using FataMirageWinRT.Core.Player.Inventory;
+using FataMirage.Core.Player.Inventory;
 using System.Globalization;
 
-namespace FataMirageWinRT.Core.Game
+namespace FataMirage.Core.Game
 {
     class LoadUI
     {

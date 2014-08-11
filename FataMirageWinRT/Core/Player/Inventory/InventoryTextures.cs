@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FataMirageWinRT.Core.Player.Inventory
+namespace FataMirage.Core.Player.Inventory
 {
     /// <summary>
     /// Stores all the texture's the inventory needs to render (except the item textures)

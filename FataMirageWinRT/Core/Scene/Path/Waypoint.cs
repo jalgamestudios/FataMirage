@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FataMirageWinRT.Core.Scene.Path
+namespace FataMirage.Core.Scene.Path
 {
     class Waypoint
     {

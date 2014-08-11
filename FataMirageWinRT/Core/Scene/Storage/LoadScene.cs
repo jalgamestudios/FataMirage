@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FataMirageWinRT.Core.Scene.Storage
+namespace FataMirage.Core.Scene.Storage
 {
     class LoadScene
     {

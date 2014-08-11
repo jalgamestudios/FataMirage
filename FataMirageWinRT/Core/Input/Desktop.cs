@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FataMirageWinRT.Core.Input
+namespace FataMirage.Core.Input
 {
     class Desktop
     {

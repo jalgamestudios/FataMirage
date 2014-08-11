@@ -5,7 +5,7 @@ using System.IO;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 
-namespace FataMirageWinRT.Core.Scene
+namespace FataMirage.Core.Scene
 {
     class SceneLoader
     {

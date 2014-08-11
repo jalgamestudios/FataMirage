@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Windows.Storage;
 
-namespace FataMirageWinRT.Core.Game
+namespace FataMirage.Core.Game
 {
     class LoadMeta
     {

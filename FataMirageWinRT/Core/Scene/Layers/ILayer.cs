@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FataMirageWinRT.Core.Scene.Layers
+namespace FataMirage.Core.Scene.Layers
 {
     interface ILayer
     {

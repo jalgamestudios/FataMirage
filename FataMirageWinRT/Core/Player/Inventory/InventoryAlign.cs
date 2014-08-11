@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace FataMirageWinRT.Core.Player.Inventory
+namespace FataMirage.Core.Player.Inventory
 {
     /// <summary>
     /// Defines the align of the inventory

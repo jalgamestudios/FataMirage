@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FataMirageWinRT.Core.Graphics
+namespace FataMirage.Core.Graphics
 {
     static class Utilities
     {

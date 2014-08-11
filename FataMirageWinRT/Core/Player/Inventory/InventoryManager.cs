@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FataMirageWinRT.Core.Player.Inventory
+namespace FataMirage.Core.Player.Inventory
 {
     static class InventoryManager
     {
