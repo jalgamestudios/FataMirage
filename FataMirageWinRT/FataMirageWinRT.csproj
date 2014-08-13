@@ -133,51 +133,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Core\CoreControl.cs" />
-    <Compile Include="Core\Game\LoadMeta.cs" />
-    <Compile Include="Core\Game\LoadUI.cs" />
-    <Compile Include="Core\Game\Meta.cs" />
-    <Compile Include="Core\Game\State.cs" />
-    <Compile Include="Core\Game\Storage\LoadGame.cs" />
-    <Compile Include="Core\Game\Storage\SaveGame.cs" />
-    <Compile Include="Core\Graphics\Manager.cs" />
-    <Compile Include="Core\Graphics\Scaler.cs" />
-    <Compile Include="Core\Graphics\Settings.cs" />
-    <Compile Include="Core\Graphics\Texture.cs" />
-    <Compile Include="Core\Graphics\Utilities.cs" />
-    <Compile Include="Core\Input\Desktop.cs" />
-    <Compile Include="Core\Input\Gamepad.cs" />
-    <Compile Include="Core\Input\InputManager.cs" />
-    <Compile Include="Core\Input\Settings.cs" />
-    <Compile Include="Core\Input\Touch.cs" />
-    <Compile Include="Core\Player\Inventory\InventoryAlign.cs" />
-    <Compile Include="Core\Player\Inventory\InventoryConfig.cs" />
-    <Compile Include="Core\Player\Inventory\InventoryManager.cs" />
-    <Compile Include="Core\Player\Inventory\InventoryTextures.cs" />
-    <Compile Include="Core\Player\Inventory\Item.cs" />
-    <Compile Include="Core\Player\PlayerManager.cs" />
-    <Compile Include="Core\Player\Legs.cs" />
-    <Compile Include="Core\Player\Storage\LoadPlayer.cs" />
-    <Compile Include="Core\Player\Storage\SavePlayer.cs" />
-    <Compile Include="Core\Player\Texture.cs" />
-    <Compile Include="Core\Scene\Layers\ILayer.cs" />
-    <Compile Include="Core\Scene\Layers\ImageLayer.cs" />
-    <Compile Include="Core\Scene\Layers\ItemLayer.cs" />
-    <Compile Include="Core\Scene\Layers\LayerFactory.cs" />
-    <Compile Include="Core\Scene\Path\Waypoint.cs" />
-    <Compile Include="Core\Scene\Path\Waypoints.cs" />
-    <Compile Include="Core\Scene\SceneLoader.cs" />
-    <Compile Include="Core\Scene\SceneManager.cs" />
-    <Compile Include="Core\Scene\SceneState.cs" />
-    <Compile Include="Core\Scene\Storage\LoadScene.cs" />
-    <Compile Include="Core\Scene\Storage\SaveScene.cs" />
-    <Compile Include="Debugging\Logger.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Game1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stator.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -190,86 +150,6 @@
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
-    <Content Include="Game\Player\Standing_Back.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Standing_Front.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Standing_Left.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Standing_Right.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Walking_Left_F1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Walking_Left_F2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Walking_Left_F3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Walking_Left_F4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Walking_Right_F1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Walking_Right_F2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Walking_Right_F3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Player\Walking_Right_F4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\1Polizei\Graphics\Blumentopf.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\1Polizei\Graphics\Fahrrad.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\1Polizei\Graphics\Fahrradständer.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\1Polizei\Graphics\Police_layer.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\1Polizei\Graphics\Schloss.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\1Polizei\Graphics\Schlüssel.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\1Polizei\scene.xml" />
-    <Content Include="Game\meta.xml" />
-    <Content Include="Game\Scenes\Polizei\Graphics\Background.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\Polizei\Graphics\Biciclestand.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\Polizei\Graphics\Bike.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\Polizei\Graphics\Doors.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\Polizei\Graphics\Key.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\Scenes\Polizei\scene.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Game\UI.xml" />
-    <Content Include="Game\UI\Inventory\InventoryBlank.png" />
-    <Content Include="Game\UI\Inventory\InventoryHidden.png" />
-    <Content Include="Game\UI\Inventory\InventoryItem.png" />
-    <Content Include="Game\UI\Inventory\InventoryLeft.png" />
-    <Content Include="Game\UI\Inventory\InventoryRight.png" />
     <Content Include="Libs\MonoGame.Framework.dll" />
     <Content Include="Libs\MonoGame.Framework.XML" />
     <Content Include="Libs\MonogameLicense.txt" />
@@ -291,9 +171,7 @@
     <Content Include="Libs\SharpDX.xml" />
     <Content Include="Libs\SharpDX_License.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Audio\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -314,6 +192,7 @@
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
+  <Import Project="..\FataMirage\FataMirage.projitems" Label="Shared" Condition="Exists('..\FataMirage\FataMirage.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

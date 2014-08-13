@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>8120437a-48b9-4ea4-8e3c-c29044d3ab70</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>FataMirage</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Game\meta.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Left.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Blumentopf.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Fahrrad.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Fahrradständer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Police_layer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Schloss.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Schlüssel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\scene.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Biciclestand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Bike.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Doors.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Key.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\scene.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryBlank.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryHidden.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryItem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryLeft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryRight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Core\Audio\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\CoreControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Game\LoadMeta.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Game\LoadUI.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Game\Meta.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Game\State.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Game\Storage\LoadGame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Game\Storage\SaveGame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Manager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Scaler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Texture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Utilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Input\Desktop.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Input\Gamepad.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Input\InputManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Input\Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Input\Touch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryAlign.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryTextures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Legs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\PlayerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Storage\LoadPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Storage\SavePlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Texture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Layers\ILayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Layers\ImageLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Layers\ItemLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Layers\LayerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Path\Waypoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Path\Waypoints.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\SceneLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\SceneManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\SceneState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Storage\LoadScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Storage\SaveScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Debugging\Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stator.cs" />
+  </ItemGroup>
+</Project>

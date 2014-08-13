@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Scene>
+  <ImageLayer Depth="1" Texture="Police_layer" Name="Police_layer"/>
+  <ImageLayer Depth="0.1" Texture="Fahrradstaender" Name="Fahrradständer"/>
+  <ImageLayer Depth="0.2" Texture="Fahrrad" Name="Fahrrad"/>
+  <ImageLayer Depth="0" Texture="Schloss" Name="Schloss" />
+  <ImageLayer Depth="0.7" Texture="Blumentopf" Name="Blumentopf"/>
+  <ItemLayer Depth="0.6" Texture="Schluessel" Name="Schlüssel"/>
+  <!--<ImageLayer Depth="2" Texture="Fahrrad" Name="Fahrrad"/>-->
+  <WalkingPoint Name="left" X="0.075" Y="0.50625">
+    <Connection Name="center" Speed="1" />
+  </WalkingPoint>
+  <WalkingPoint Name="center" X="0.531215" Y="0.50625">
+    <Connection Name="right" Speed="1" />
+    <Connection Name="left" Speed="1" />
+  </WalkingPoint>
+  <WalkingPoint Name="right" X="0.95" Y="0.50625">
+    <Connection Name="center" Speed="1" />
+  </WalkingPoint>
+</Scene>
