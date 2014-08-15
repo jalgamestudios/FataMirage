@@ -61,8 +61,6 @@ namespace FataMirage.Core.Player
 
         public static void Init()
         {
-            currentPositionName = "left";
-            currentGoal = "center";
         }
         public static void LoadContent()
         {

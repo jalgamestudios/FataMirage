@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-#if NETFX_CORE
+#if NETFX_CORE || WINDOWS_PHONE
 using Windows.Storage;
 #endif
 
@@ -18,13 +18,13 @@ namespace FataMirage.Core.Game
 {
     class LoadMeta
     {
-#if NETFX_CORE
+#if NETFX_CORE || WINDOWS_PHONE
         public async static void Load()
 #elif WINDOWS || ANDROID
         public static void Load()
 #endif
         {
-#if NETFX_CORE
+#if NETFX_CORE || WINDOWS_PHONE
             Windows.ApplicationModel.Package package = Windows.ApplicationModel.Package.Current;
             Windows.Storage.StorageFolder installedLocation = package.InstalledLocation;
             StorageFile meta = await installedLocation.GetFileAsync("Game\\meta.xml");

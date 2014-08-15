@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Xml.Linq;
-#if NETFX_CORE
+#if NETFX_CORE || WINDOWS_PHONE
 using Windows.Storage;
 #endif
 using System.IO;
@@ -12,7 +12,7 @@ namespace FataMirage.Core.Scene
 {
     class SceneLoader
     {
-#if NETFX_CORE
+#if NETFX_CORE || WINDOWS_PHONE
         public async static void LoadScenes()
 #elif WINDOWS || ANDROID
         public static void LoadScenes()
@@ -20,7 +20,7 @@ namespace FataMirage.Core.Scene
         {
             Game.State.gameState = Game.State.GameStates.LoadingScenes;
             SceneManager.scenes = new Dictionary<string, SceneState>();
-#if NETFX_CORE
+#if NETFX_CORE || WINDOWS_PHONE
             Windows.ApplicationModel.Package package = Windows.ApplicationModel.Package.Current;
             Windows.Storage.StorageFolder installedLocation = package.InstalledLocation;
             foreach (StorageFolder sceneFolder in await (await installedLocation.GetFolderAsync("Game\\Scenes")).GetFoldersAsync())

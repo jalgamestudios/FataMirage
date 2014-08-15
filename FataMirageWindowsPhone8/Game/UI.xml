@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UI>
+  <Inventory>
+    <HasLeft>True</HasLeft>
+    <HasRight>True</HasRight>
+    <LeftEnd>UI/Inventory/InventoryLeft</LeftEnd>
+    <RightEnd>UI/Inventory/InventoryRight</RightEnd>
+
+    <InventoryItem>UI/Inventory/InventoryItem</InventoryItem>
+    <InventoryBlank>UI/Inventory/InventoryBlank</InventoryBlank>
+    
+    <Width>6it</Width>
+
+    <Height>0.1</Height>
+    
+    <Align>TopCenter</Align>
+    
+    <Collapsable>True</Collapsable>
+    <CollapseSpeed>2</CollapseSpeed>
+    <Expander>UI/Inventory/InventoryHidden</Expander>
+    <Collapser>UI/Inventory/InventoryHidden</Collapser>
+  </Inventory>
+</UI>

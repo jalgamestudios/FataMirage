@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Scene>
+  <ImageLayer Depth="1" Texture="background" Name="background"/>
+  <ImageLayer Depth="0.9" Texture="stones" Name="stones" />
+  <ImageLayer Depth="0" Texture="lighting" Name="lighting" />
+  <ImageLayer Depth="0.8" Texture="lampcable" Name="lampcable" />
+  <ImageLayer Depth="0.7" Texture="triggercable" Name="triggercable" Visible="false"/>
+  <ImageLayer Depth="0.6" Texture="holefilled" Name="holefilled" Visible="false" />
+  <WalkingPoint Name="lamp" X="0.21875" Y="0.4375">
+    <Connection Name="trigger" Speed="0.7" />
+    <Connection Name="cliff-left" Speed="0.85" />
+    <Hotspot X="0.1875" Y="0.375">
+      #if the lampcable is not visible, 
+      #go to the end
+      if lampcable.Visible false END
+      
+      #disable the user activity
+      cutscene
+      
+      #add the item to the inventory
+      additem cable
+      
+      #fade the lampcable visibility to false in 0.5 seconds
+      fade lampcable.Visible false 0.5
+      
+      #re-enable the user activity
+      ingame
+      END
+    </Hotspot>
+  </WalkingPoint>
+  <WalkingPoint Name="trigger" X="0.1375" Y="0.53125">
+    <Connection Name="lamp" Speed="0.7" />
+    <Connection Name="cliff-left" Speed="0.95" />
+  </WalkingPoint>
+  <WalkingPoint Name="cliff-left" X="0.35625" Y="0.5">
+    <Connection Name="trigger" Speed="0.95" />
+    <Connection Name="lamp" Speed="0.85" />
+    <Connection Name="cliff-right" Speed="1" Enabled="false" />
+  </WalkingPoint>
+  <WalkingPoint Name="cliff-right" X="0.6" Y="0.48125">
+    <Connection Name="cliff-left" Speed="1" />
+    <Connection Name="end-right"/>
+  </WalkingPoint>
+  <WalkingPoint Name="end-right" X="0.89375" Y="0.475">
+    <OnReach>
+      #fades the screen to white in 1.5 seconds
+      Fade 255 255 255 1.5
+    </OnReach>
+  </WalkingPoint>
+</Scene>

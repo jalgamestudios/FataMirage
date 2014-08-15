@@ -44,6 +44,8 @@ namespace FataMirage.Core.Scene.Path
                 connections.Add((float)Math.Min(differenceAngel, Math.PI * 2 - differenceAngel), connection.goesTo);
             }
             var connectionsOrdered = connections.OrderBy(kvp => kvp.Key).ToList();
+            if (connectionsOrdered.Count == 0)
+                return "false";
             return connectionsOrdered.First().Value;
         }
         public float getDisctance(string from, string to)

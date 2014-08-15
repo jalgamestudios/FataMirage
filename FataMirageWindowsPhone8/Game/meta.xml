@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Meta>
+  <RenderWidth>160</RenderWidth>
+  <RenderHeight>90</RenderHeight>
+  <StartingScene>Polizei</StartingScene>
+  <PlayerStarts>entrace</PlayerStarts>
+  <PlayerTextures>
+    <StandingFront>Player/Standing_Front</StandingFront>
+    <StandingLeft>Player/Standing_Left</StandingLeft>
+    <StandingBack>Player/Standing_Back</StandingBack>
+    <StandingRight>Player/Standing_Right</StandingRight>
+    <WalkingLeft>
+      <Frame>Player/Walking_Left_F1</Frame>
+      <Frame>Player/Walking_Left_F2</Frame>
+      <Frame>Player/Walking_Left_F3</Frame>
+      <Frame>Player/Walking_Left_F4</Frame>
+    </WalkingLeft>
+    <WalkingRight>
+      <Frame>Player/Walking_Right_F1</Frame>
+      <Frame>Player/Standing_Right</Frame>
+      <Frame>Player/Walking_Right_F2</Frame>
+      <Frame>Player/Walking_Right_F3</Frame>
+      <Frame>Player/Standing_Right</Frame>
+      <Frame>Player/Walking_Right_F4</Frame>
+    </WalkingRight>
+    <WalkingUp>
+      <Frame>Player/Walking_Left_F1</Frame>
+      <Frame>Player/Walking_Left_F2</Frame>
+      <Frame>Player/Walking_Left_F3</Frame>
+      <Frame>Player/Walking_Left_F4</Frame>
+    </WalkingUp>
+    <WalkingDown>
+      <Frame>Player/Walking_Left_F1</Frame>
+      <Frame>Player/Walking_Left_F2</Frame>
+      <Frame>Player/Walking_Left_F3</Frame>
+      <Frame>Player/Walking_Left_F4</Frame>
+    </WalkingDown>
+    <Jumping>
+      <Frame>Player/Walking_Left_F1</Frame>
+      <Frame>Player/Walking_Left_F2</Frame>
+      <Frame>Player/Walking_Left_F3</Frame>
+      <Frame>Player/Walking_Left_F4</Frame>
+    </Jumping>
+  </PlayerTextures>
+</Meta>

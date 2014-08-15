@@ -2,8 +2,8 @@
 <Meta>
   <RenderWidth>160</RenderWidth>
   <RenderHeight>90</RenderHeight>
-  <StartingScene>Polizei</StartingScene>
-  <PlayerStarts>entrace</PlayerStarts>
+  <StartingScene>OldFactory</StartingScene>
+  <PlayerStarts>cliff-left</PlayerStarts>
   <PlayerTextures>
     <StandingFront>Player/Standing_Front</StandingFront>
     <StandingLeft>Player/Standing_Left</StandingLeft>

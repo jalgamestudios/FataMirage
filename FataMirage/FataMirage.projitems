@@ -12,76 +12,97 @@
     <Content Include="$(MSBuildThisFileDirectory)Game\meta.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Back.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Back.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Front.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Front.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Left.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Left.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Right.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Standing_Right.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F1.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F1.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F2.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F2.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F3.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F3.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F4.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Left_F4.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F1.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F1.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F2.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F2.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F3.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F3.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F4.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Player\Walking_Right_F4.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Blumentopf.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Blumentopf.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Fahrrad.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Fahrrad.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Fahrradständer.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Fahrradständer.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Police_layer.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Police_layer.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Schloss.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Schloss.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Schlüssel.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\Graphics\Schlüssel.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\1Polizei\scene.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Background.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Biciclestand.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\holefilled.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Bike.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\lampcable.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Doors.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\lighting.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Key.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\stones.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\triggercable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\scene.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Background.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Biciclestand.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Bike.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Doors.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\Graphics\Key.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\Polizei\scene.xml">
@@ -90,19 +111,19 @@
     <Content Include="$(MSBuildThisFileDirectory)Game\UI.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryBlank.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryBlank.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryHidden.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryHidden.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryItem.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryItem.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryLeft.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryLeft.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryRight.png">
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryRight.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
