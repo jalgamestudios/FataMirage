@@ -9,6 +9,7 @@ namespace FataMirage.Core.Scene
     class SceneState
     {
         public Dictionary<string, Layers.ILayer> layers = new Dictionary<string, Layers.ILayer>();
+        public List<Hotspot> hotspots = new List<Hotspot>();
         public IOrderedEnumerable<KeyValuePair<string, Layers.ILayer>> layersDepthSorted
         {
             get
@@ -24,15 +25,6 @@ namespace FataMirage.Core.Scene
                 layer.Update(elapsedTime);
             }
             
-        }
-        public void Click(int x, int y)
-        {
-            foreach (KeyValuePair<string, Layers.ILayer> layer in layersDepthSorted)
-            {
-                if (layer.Value.collisionDetect(Graphics.Scaler.screenToWorld(x, y).X,
-                    Graphics.Scaler.screenToWorld(x, y).Y))
-                    break;
-            }
         }
         public void Draw(float elapsedTime)
         {

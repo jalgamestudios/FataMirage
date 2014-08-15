@@ -22,15 +22,9 @@ namespace FataMirage.Core.Player.Inventory
         public static void Init()
         {
             inventoryShowedGoal = 1;
-        }
-        public static void LoadContent()
-        {
-        }
-        public static void Update(float elapsedTime)
-        {
-            if (Input.InputManager.pointerState == Input.InputManager.PointerStates.Click)
+            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(2, (x, y) =>
             {
-                var relativePosition = Graphics.Scaler.screenToWorld(Input.InputManager.pointerX, Input.InputManager.pointerY);
+                var relativePosition = Graphics.Scaler.screenToWorld(x, y);
                 if (InventoryConfig.getexpanderBounds().Contains(relativePosition.X, relativePosition.Y))
                 {
                     switch ((int)inventoryShowedGoal)
@@ -38,9 +32,16 @@ namespace FataMirage.Core.Player.Inventory
                         case 0: inventoryShowedGoal = 1; break;
                         case 1: inventoryShowedGoal = 0; break;
                     }
-                    Input.InputManager.pointerState = Input.InputManager.PointerStates.Hover;
+                    return true;
                 }
-            }
+                return false;
+                }));
+        }
+        public static void LoadContent()
+        {
+        }
+        public static void Update(float elapsedTime)
+        {
             if (inventoryShowedGoal < inventoryShowed)
             {
                 inventoryShowed -= InventoryConfig.collapseSpeed * elapsedTime;

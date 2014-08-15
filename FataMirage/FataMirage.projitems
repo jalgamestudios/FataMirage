@@ -132,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Core\CoreControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\BuiltIn\AddItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\BuiltIn\Cutscene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\BuiltIn\FadeLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\FataVar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\IFunction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\ScriptManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Game\LoadMeta.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Game\LoadUI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Game\Meta.cs" />
@@ -143,6 +149,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Texture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Utilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Input\ClickLayerManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Input\Desktop.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Input\Gamepad.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Input\InputManager.cs" />
@@ -158,6 +165,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Storage\LoadPlayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Storage\SavePlayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Texture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Hotspot.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Layers\ILayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Layers\ImageLayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Layers\ItemLayer.cs" />

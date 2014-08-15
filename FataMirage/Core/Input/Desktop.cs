@@ -26,7 +26,7 @@ namespace FataMirage.Core.Input
                 InputManager.pointerState = InputManager.PointerStates.Click;
                 InputManager.pointerX = currentMouseState.X;
                 InputManager.pointerY = currentMouseState.Y;
-            }
+            }   
             lastMouseState = currentMouseState;
         }
         public static void Draw(float elapsedTime)

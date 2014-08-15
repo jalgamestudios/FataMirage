@@ -32,6 +32,7 @@ namespace FataMirage.Core.Input
             Touch.Update(elapsedTime);
             Desktop.Update(elapsedTime);
             Gamepad.Update(elapsedTime);
+            ClickLayerManager.Update();
         }
         public static void Draw(float elapsedTime)
         {

@@ -10,9 +10,9 @@
     <Connection Name="trigger" Speed="0.7" />
     <Connection Name="cliff-left" Speed="0.85" />
     <Hotspot X="0.1875" Y="0.375">
-      #if the lampcable is not visible, 
+      #if the lampcable is not 100% visible, 
       #go to the end
-      if lampcable.Visible false END
+      ifn lampcable.Opacity 1 END
       
       #disable the user activity
       cutscene
@@ -20,8 +20,8 @@
       #add the item to the inventory
       additem cable
       
-      #fade the lampcable visibility to false in 0.5 seconds
-      fade lampcable.Visible false 0.5
+      #fade the lampcable opacity to in 0.5 seconds
+      fadelayer lampcable 0 0.5
       
       #re-enable the user activity
       ingame

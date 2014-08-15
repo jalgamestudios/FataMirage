@@ -13,6 +13,23 @@ namespace FataMirage.Core.Player
         {
             Legs.Init();
             Inventory.InventoryManager.Init();
+            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(1, (x, y) =>
+                {
+                    if (!Player.Legs.isWalking)
+                    {
+                        string goal = Scene.SceneManager.currentScene.waypoints.getNearestConnection(
+                            Player.Legs.currentPositionName,
+                            Graphics.Scaler.screenToWorld(Input.InputManager.pointerX, 0).X,
+                             Graphics.Scaler.screenToWorld(0, Input.InputManager.pointerY).Y);
+                        if (goal != "false")
+                        {
+                            Player.Legs.currentGoal = goal;
+                            Player.Legs.isWalking = true;
+                            return true;
+                        }
+                    }
+                    return false;
+                }));
         }
         public static void LoadContent()
         {
@@ -24,22 +41,22 @@ namespace FataMirage.Core.Player
         {
             Legs.Update(elapsedTime);
             Inventory.InventoryManager.Update(elapsedTime);
-            if (Input.InputManager.pointerState == Input.InputManager.PointerStates.Click)
-            {
-                if (!Player.Legs.isWalking)
-                {
-                    string goal = Scene.SceneManager.currentScene.waypoints.getNearestConnection(
-                        Player.Legs.currentPositionName,
-                        Graphics.Scaler.screenToWorld(Input.InputManager.pointerX, 0).X,
-                         Graphics.Scaler.screenToWorld(0, Input.InputManager.pointerY).Y);
-                    if (goal != "false")
-                    {
-                        Player.Legs.currentGoal = goal;
-                        Player.Legs.isWalking = true;
-                    }
-                    Input.InputManager.pointerState = Input.InputManager.PointerStates.Hover;
-                }
-            }
+            //if (Input.InputManager.pointerState == Input.InputManager.PointerStates.Click)
+            //{
+            //    if (!Player.Legs.isWalking)
+            //    {
+            //        string goal = Scene.SceneManager.currentScene.waypoints.getNearestConnection(
+            //            Player.Legs.currentPositionName,
+            //            Graphics.Scaler.screenToWorld(Input.InputManager.pointerX, 0).X,
+            //             Graphics.Scaler.screenToWorld(0, Input.InputManager.pointerY).Y);
+            //        if (goal != "false")
+            //        {
+            //            Player.Legs.currentGoal = goal;
+            //            Player.Legs.isWalking = true;
+            //        }
+            //        Input.InputManager.pointerState = Input.InputManager.PointerStates.Hover;
+            //    }
+            //}
         }
         public static void Draw(float elapsedTime)
         {
