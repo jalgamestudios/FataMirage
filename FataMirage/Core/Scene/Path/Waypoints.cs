@@ -33,7 +33,7 @@ namespace FataMirage.Core.Scene.Path
         public string getNearestConnection(string from, float x, float y)
         {
             Dictionary<float, string> connections = new Dictionary<float, string>();
-            foreach (WaypointConnection connection in waypoints[from].connectedTo)
+            foreach (WaypointConnection connection in waypoints[from].connectedTo.Where(wp => wp.enabled))
             {
                 //connections.Add((waypoints[connection.goesTo].position - new Vector2(x, y)).Length(), connection.goesTo);
                 float connectionAngel = (float)Math.Atan2((waypoints[connection.goesTo].position- waypoints[from].position).Y,

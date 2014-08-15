@@ -65,6 +65,8 @@ namespace FataMirage.Core.Scene
                                 wpConnection.goesTo = subNode.Attribute("Name").Value;
                                 foreach (var attribute in subNode.Attributes("Speed"))
                                     wpConnection.walkingMultiplier = float.Parse(attribute.Value, CultureInfo.InvariantCulture);
+                                if (subNode.Attribute("Enabled") != null)
+                                    wpConnection.enabled = Convert.ToBoolean(subNode.Attribute("Enabled").Value);
                                 waypoint.connectedTo.Add(wpConnection);
                             }
                         }

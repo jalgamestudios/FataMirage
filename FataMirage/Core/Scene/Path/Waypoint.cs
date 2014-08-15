@@ -34,15 +34,30 @@ namespace FataMirage.Core.Scene.Path
     {
         public string goesTo;
         public float walkingMultiplier;
+        public bool enabled;
         public WaypointConnection(string goesTo)
         {
             this.goesTo = goesTo;
             this.walkingMultiplier = 1;
+            this.enabled = true;
         }
         public WaypointConnection(string goesTo, float walkingMultiplier)
         {
             this.goesTo = goesTo;
             this.walkingMultiplier = walkingMultiplier;
+            this.enabled = true;
+        }
+        public WaypointConnection(string goesTo, bool enabled)
+        {
+            this.goesTo = goesTo;
+            this.walkingMultiplier = 1;
+            this.enabled = enabled;
+        }
+        public WaypointConnection(string goesTo, float walkingMultiplier, bool enabled)
+        {
+            this.goesTo = goesTo;
+            this.walkingMultiplier = walkingMultiplier;
+            this.enabled = enabled;
         }
     }
 }
