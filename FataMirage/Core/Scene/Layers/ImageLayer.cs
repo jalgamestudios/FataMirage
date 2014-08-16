@@ -80,17 +80,40 @@ namespace FataMirage.Core.Scene.Layers
         /// </summary>
         /// <param name="elapsedTime">The time in seconds since the last time this method was called (= the last frame)</param>
         void ILayer.Draw(float elapsedTime) { _draw(elapsedTime); }
+        /// <summary>
+        /// Checks if the layer is opaque at the given position
+        /// </summary>
+        /// <param name="x">The x position, measured in world units</param>
+        /// <param name="y">The y position, measured in world units</param>
+        /// <returns>True if the layer is opaque, otherwise false</returns>
         bool ILayer.collisionDetect(float x, float y){return _collisionDetect(x, y);}
+        /// <summary>
+        /// Returns the position on the z axis. The higher it is, the farther it is back
+        /// </summary>
         float ILayer.zPos { get { return _zPos; } set { _zPos = value; } }
+        /// <summary>
+        /// Updates the layer
+        /// </summary>
+        /// <param name="elapsedTime">The time since the last call of this method, measured in seconds</param>
         void _update(float elapsedTime)
         {
             
         }
+        /// <summary>
+        /// Draws the layer
+        /// </summary>
+        /// <param name="elapsedTime">The time since the last call of this method, measured in seconds</param>
         void _draw(float elapsedTime)
         {
             if (visible)
                 Graphics.Utilities.DrawFullScreen(texture, _zPos, opacity);
         }
+        /// <summary>
+        /// Checks if the layer is opaque at the given position
+        /// </summary>
+        /// <param name="x">The x position, measured in world units</param>
+        /// <param name="y">The y position, measured in world units</param>
+        /// <returns>True if the layer is opaque, otherwise false</returns>
         bool _collisionDetect(float x, float y)
         {
             if (!visible)
