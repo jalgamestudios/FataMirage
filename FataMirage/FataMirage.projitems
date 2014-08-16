@@ -135,6 +135,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\BuiltIn\AddItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\BuiltIn\Cutscene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\BuiltIn\FadeLayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\FataSharpVarProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\FataVar.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\IFunction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FataScript\ScriptManager.cs" />

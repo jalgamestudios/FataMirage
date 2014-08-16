@@ -10,17 +10,33 @@ namespace FataMirage.Core.Scene.Layers
     class ImageLayer : ILayer
     {
         Graphics.Texture texture;
-        bool visible;
+        public bool visible;
+        public float opacity;
         public ImageLayer(Graphics.Texture texture, float depth)
         {
-            _zPos = depth;
+            this._zPos = depth;
             this.texture = texture;
-            visible = true;
+            this.visible = true;
+            this.opacity = 1;
         }
         public ImageLayer(string fileName, float depth)
         {
-            _zPos = depth;
-            this.texture =new  Graphics.Texture(fileName);
+            this._zPos = depth;
+            this.texture = new Graphics.Texture(fileName);
+            this.opacity = 1;
+        }
+        public ImageLayer(Graphics.Texture texture, float depth, float opacity)
+        {
+            this._zPos = depth;
+            this.texture = texture;
+            this.visible = true;
+            this.opacity = opacity;
+        }
+        public ImageLayer(string fileName, float depth, float opacity)
+        {
+            this._zPos = depth;
+            this.texture = new Graphics.Texture(fileName);
+            this.opacity = opacity;
         }
         void ILayer.Update(float elapsedTime) { _update(elapsedTime); }
         void ILayer.Draw(float elapsedTime) { _draw(elapsedTime); }
@@ -33,7 +49,7 @@ namespace FataMirage.Core.Scene.Layers
         void _draw(float elapsedTime)
         {
             if (visible)
-                Graphics.Utilities.DrawFullScreen(texture, _zPos);
+                Graphics.Utilities.DrawFullScreen(texture, _zPos, opacity);
         }
         bool _collisionDetect(float x, float y)
         {

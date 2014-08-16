@@ -16,7 +16,18 @@ namespace FataMirage.Core.Scene
         }
         public static void Init()
         {
-            //scenes = new Dictionary<string, SceneState>();
+            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(1.5f, (x, y) =>
+                {
+                    foreach (var hotspot in currentScene.waypoints.waypoints[Player.Legs.currentPositionName].hotspots)
+                    {
+                        if (hotspot.clicked(Graphics.Scaler.screenToWorld(x), Graphics.Scaler.screenToWorld(y)))
+                        {
+                            FataScript.ScriptManager.ExecuteScript(hotspot.scriptName);
+                            return true;
+                        }
+                    }
+                        return false;
+                }));
         }
         public static void LoadContent()
         {

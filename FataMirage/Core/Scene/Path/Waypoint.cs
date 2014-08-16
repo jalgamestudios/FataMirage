@@ -11,6 +11,7 @@ namespace FataMirage.Core.Scene.Path
     {
         public Vector2 position;
         public List<WaypointConnection> connectedTo;
+        public List<Hotspot> hotspots = new List<Hotspot>();
         public Waypoint(Vector2 position)
         {
             this.position = position;

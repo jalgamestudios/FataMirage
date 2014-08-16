@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace FataMirage.Core.FataScript
 {
@@ -19,10 +20,37 @@ namespace FataMirage.Core.FataScript
             List<string> linesPrecompiled = new List<string>();
             foreach (string line in lines)
             {
-                if (line.StartsWith("#") || line.Trim() == "")
+                if (line.Trim().StartsWith("#") || line.Trim() == "")
                     continue;
                 linesPrecompiled.Add(line.Trim());
-
+            }
+            for (int i = 0; i < linesPrecompiled.Count; i++)
+            {
+                List<string> arguments = linesPrecompiled[i].Split(' ').ToList();
+                arguments.RemoveAt(0);
+                if (linesPrecompiled[i].StartsWith("if"))
+                {
+                    if (FataSharpVarProvider.GetVar(arguments[0]) == arguments[1])
+                    {
+                        while (arguments[i] != arguments[2] && i < linesPrecompiled.Count)
+                            i++;
+                        continue;
+                    }
+                }
+                else if (linesPrecompiled[i].StartsWith("ifn"))
+                {
+                    if (FataSharpVarProvider.GetVar(arguments[0]) != arguments[1])
+                    {
+                        while (arguments[i] != arguments[2] && i < linesPrecompiled.Count)
+                            i++;
+                        continue;
+                    }
+                }
+                else if (linesPrecompiled[i].StartsWith("fadelayer"))
+                {
+                    (Scene.SceneManager.currentScene.layers[arguments[0]] as
+                        Scene.Layers.ImageLayer).opacity = 0;
+                }
             }
         }
         public static void AddVar(string name, string value)

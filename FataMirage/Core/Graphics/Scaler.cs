@@ -47,6 +47,10 @@ namespace FataMirage.Core.Graphics
         {
             return screenToWorld(new Vector2(x, y));
         }
+        public static float screenToWorld(float xOrY)
+        {
+            return screenToWorld(new Vector2(xOrY, 0)).X;
+        }
         public static Vector2 screenToWorld(Vector2 pixelPosition)
         {
             if (Settings.actualScreenWidth / Settings.actualScreenHeight < Settings.renderAspectRatio)

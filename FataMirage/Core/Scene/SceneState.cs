@@ -9,7 +9,6 @@ namespace FataMirage.Core.Scene
     class SceneState
     {
         public Dictionary<string, Layers.ILayer> layers = new Dictionary<string, Layers.ILayer>();
-        public List<Hotspot> hotspots = new List<Hotspot>();
         public IOrderedEnumerable<KeyValuePair<string, Layers.ILayer>> layersDepthSorted
         {
             get

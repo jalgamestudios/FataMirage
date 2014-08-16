@@ -13,5 +13,9 @@ namespace FataMirage.Core.Graphics
         {
             Scaler.Draw(texture.texture, 0, 0, 1, 1 / Settings.renderAspectRatio, depth);
         }
+        public static void DrawFullScreen(Texture texture, float depth, float opacity)
+        {
+            Scaler.Draw(texture.texture, 0, 0, 1, 1 / Settings.renderAspectRatio, new Color(1f, 1f, 1f, opacity), depth);
+        }
     }
 }

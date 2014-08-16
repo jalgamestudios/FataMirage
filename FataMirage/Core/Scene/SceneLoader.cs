@@ -57,6 +57,8 @@ namespace FataMirage.Core.Scene
                         Scene.Path.Waypoint waypoint = new Path.Waypoint(new Vector2(0, 0));
                         waypoint.position.X = float.Parse(node.Attribute("X").Value, CultureInfo.InvariantCulture);
                         waypoint.position.Y = float.Parse(node.Attribute("Y").Value, CultureInfo.InvariantCulture);
+                        string walkingPointName = node.Attribute("Name").Value;
+                        int hotspotCounter = 0;
                         foreach (XElement subNode in node.Elements())
                         {
                             if (subNode.Name.LocalName == "Connection")
@@ -69,10 +71,21 @@ namespace FataMirage.Core.Scene
                                     wpConnection.enabled = Convert.ToBoolean(subNode.Attribute("Enabled").Value);
                                 waypoint.connectedTo.Add(wpConnection);
                             }
+                            else if (subNode.Name.LocalName == "Hotspot")
+                            {
+                                string scriptName = "$" + sceneName + "->" + walkingPointName + "->" + hotspotCounter.ToString();
+                                FataScript.ScriptManager.AddScript(scriptName, node.Value);
+                                Hotspot hotspot = new Hotspot(float.Parse(subNode.Attribute("X").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("Y").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("X").Value, CultureInfo.InvariantCulture),
+                                    scriptName);
+                                waypoint.hotspots.Add(hotspot);
+                                hotspotCounter++;
+                            }
                         }
-                        string name = node.Attribute("Name").Value;
-                        scene.waypoints.waypoints.Add(name, waypoint);
+                        scene.waypoints.waypoints.Add(walkingPointName, waypoint);
                     }
+                    
                 }
                 SceneManager.scenes.Add(sceneName, scene);
             }
