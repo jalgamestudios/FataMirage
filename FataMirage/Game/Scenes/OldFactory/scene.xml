@@ -10,7 +10,7 @@
   <WalkingPoint Name="lamp" X="0.21875" Y="0.4375">
     <Connection Name="trigger" Speed="0.7" />
     <Connection Name="cliff-left" Speed="0.85" />
-    <Hotspot X="0.1875" Y="0.375" Radius="0.1">
+    <Hotspot X="0.1875" Y="0.375" Radius="0.0375">
       #if the lampcable is not 100% visible, 
       #go to the end
       ifn ImageLayer.lampcable.Opacity 1 END
