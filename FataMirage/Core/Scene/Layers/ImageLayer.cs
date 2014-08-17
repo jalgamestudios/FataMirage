@@ -19,7 +19,20 @@ namespace FataMirage.Core.Scene.Layers
         /// <summary>
         /// Weather the layer is visible (this will use opacity to get and set values)
         /// </summary>
-        public bool visible;
+        public bool visible
+        {
+            get
+            {
+                return opacity != 0;
+            }
+            set
+            {
+                if (value == false && opacity != 0)
+                    opacity = 0;
+                else if (value == true && opacity == 0)
+                    opacity = 1;
+            }
+        }
         /// <summary>
         /// How opaque the layer is (0 = invisible, 1 = completely opaque)
         /// </summary>

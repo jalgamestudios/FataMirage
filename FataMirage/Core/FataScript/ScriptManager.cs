@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Microsoft.Xna.Framework;
+using System.Globalization;
 
 namespace FataMirage.Core.FataScript
 {
@@ -27,8 +29,9 @@ namespace FataMirage.Core.FataScript
             for (int i = 0; i < linesPrecompiled.Count; i++)
             {
                 List<string> arguments = linesPrecompiled[i].Split(' ').ToList();
+                string command = arguments[0];
                 arguments.RemoveAt(0);
-                if (linesPrecompiled[i].StartsWith("if"))
+                if (command == "if")
                 {
                     if (FataSharpVarProvider.GetVar(arguments[0]) == arguments[1])
                     {
@@ -37,7 +40,7 @@ namespace FataMirage.Core.FataScript
                         continue;
                     }
                 }
-                else if (linesPrecompiled[i].StartsWith("ifn"))
+                else if (command == "ifn")
                 {
                     if (FataSharpVarProvider.GetVar(arguments[0]) != arguments[1])
                     {
@@ -46,10 +49,18 @@ namespace FataMirage.Core.FataScript
                         continue;
                     }
                 }
-                else if (linesPrecompiled[i].StartsWith("fadelayer"))
+                else if (command == "fadelayer")
                 {
                     (Scene.SceneManager.currentScene.layers[arguments[0]] as
                         Scene.Layers.ImageLayer).opacity = 0;
+                }
+                else if (command =="additem")
+                {
+                    Player.Inventory.Items.items[arguments[0]].OnStage = true;
+                    Player.Inventory.Items.items[arguments[0]].initialPosition = new Vector2(
+                        float.Parse(arguments[1], CultureInfo.InvariantCulture),
+                        float.Parse(arguments[2], CultureInfo.InvariantCulture));
+                    Player.Inventory.Items.items[arguments[0]].linearProgress = 0;
                 }
             }
         }

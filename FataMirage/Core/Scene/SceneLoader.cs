@@ -85,7 +85,13 @@ namespace FataMirage.Core.Scene
                         }
                         scene.waypoints.waypoints.Add(walkingPointName, waypoint);
                     }
-                    
+                    else if (node.Name.LocalName =="Item")
+                    {
+                        Player.Inventory.Item item = new Player.Inventory.Item(
+                            new Vector2(0, 0),
+                            new Graphics.Texture("Scenes\\" + sceneName + "\\Graphics\\" + node.Attribute("Texture").Value));
+                        Player.Inventory.Items.items.Add(node.Attribute("Name").Value, item);
+                    }
                 }
                 SceneManager.scenes.Add(sceneName, scene);
             }

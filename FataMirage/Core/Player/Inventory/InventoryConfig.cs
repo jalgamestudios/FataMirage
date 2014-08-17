@@ -200,6 +200,9 @@ namespace FataMirage.Core.Player.Inventory
                     (hasRight ? InventoryTextures.getRightSideWidth : 0);
             }
         }
+        /// <summary>
+        /// Returns the X value of the left corner of the inventory, including the left separator
+        /// </summary>
         public static float inventoryLeft
         {
             get

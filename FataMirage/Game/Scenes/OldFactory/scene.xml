@@ -2,10 +2,11 @@
 <Scene>
   <ImageLayer Depth="1" Texture="background" Name="background"/>
   <ImageLayer Depth="0.9" Texture="stones" Name="stones" />
-  <ImageLayer Depth="0" Texture="lighting" Name="lighting" />
+  <ImageLayer Depth="0.1" Texture="lighting" Name="lighting" />
   <ImageLayer Depth="0.8" Texture="lampcable" Name="lampcable" />
   <ImageLayer Depth="0.7" Texture="triggercable" Name="triggercable" Visible="false"/>
   <ImageLayer Depth="0.6" Texture="holefilled" Name="holefilled" Visible="false" />
+  <Item Name="cable" Texture="itemcable" OnStage="false" />
   <WalkingPoint Name="lamp" X="0.21875" Y="0.4375">
     <Connection Name="trigger" Speed="0.7" />
     <Connection Name="cliff-left" Speed="0.85" />
@@ -18,7 +19,7 @@
       cutscene
       
       #add the item to the inventory
-      additem cable
+      additem cable 0.1875 0.375
       
       #fade the lampcable opacity to in 0.5 seconds
       fadelayer lampcable 0 0.5

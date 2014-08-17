@@ -75,6 +75,9 @@
     <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\holefilled.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\itemcable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\lampcable.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -161,6 +164,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryTextures.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\Items.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Legs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\PlayerManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Storage\LoadPlayer.cs" />

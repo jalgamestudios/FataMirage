@@ -18,7 +18,6 @@ namespace FataMirage.Core.Player.Inventory
         /// How much of the inventory will be showed after the end fo the animation
         /// </summary>
         public static float inventoryShowedGoal = 1;
-        
         public static void Init()
         {
             inventoryShowedGoal = 1;
@@ -54,6 +53,7 @@ namespace FataMirage.Core.Player.Inventory
                 if (inventoryShowedGoal <= inventoryShowed)
                     inventoryShowed = inventoryShowedGoal;
             }
+            Items.Update(elapsedTime);
         }
         public static void Draw(float elapsedTime)
         {
@@ -61,27 +61,33 @@ namespace FataMirage.Core.Player.Inventory
             {
                 var leftBounds = InventoryConfig.getLeftSideBounds();
                 Graphics.Scaler.Draw(InventoryTextures.leftSide.texture,
-                    leftBounds.X, leftBounds.Y, leftBounds.Width, leftBounds.Height, 0);
+                    leftBounds.X, leftBounds.Y, leftBounds.Width, leftBounds.Height, 0.05f);
             }
             for (int i = 0; i < InventoryConfig.InventoryWidth.width; i++)
             {
                 var bounds = InventoryConfig.getBounds(i);
                 Graphics.Scaler.Draw(InventoryTextures.itemHighlight.texture,
-                    bounds.X, bounds.Y, bounds.Width, bounds.Height, 0);
+                    bounds.X, bounds.Y, bounds.Width, bounds.Height, 0.05f);
             }
             if (InventoryConfig.hasRight)
             {
                 var rightBounds = InventoryConfig.getRightSideBounds();
                 Graphics.Scaler.Draw(InventoryTextures.rightSide.texture,
-                    rightBounds.X, rightBounds.Y, rightBounds.Width, rightBounds.Height, 0);
+                    rightBounds.X, rightBounds.Y, rightBounds.Width, rightBounds.Height, 0.05f);
+            }
+            for (int i = 0; i < Items.count; i++)
+            {
+                var itembounds = Items.getPosition(i);
+                Graphics.Scaler.Draw(Items.getTexture(i),
+                    itembounds.X, itembounds.Y, itembounds.Width, itembounds.Height, 0);
             }
             var expanderBounds = InventoryConfig.getexpanderBounds();
             Graphics.Scaler.Draw(InventoryTextures.collapser.texture,
                 expanderBounds.X, expanderBounds.Y,
-                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, 1 - inventoryShowed), 0);
+                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, 1 - inventoryShowed), 0.05f);
             Graphics.Scaler.Draw(InventoryTextures.expander.texture,
                 expanderBounds.X, expanderBounds.Y,
-                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, inventoryShowed), 0);
+                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, inventoryShowed), 0.05f);
         }
     }
 }
