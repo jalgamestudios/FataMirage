@@ -103,7 +103,10 @@ namespace FataMirage.Core.Player.Inventory
                 {
                     linearProgress += elapsedTime;
                     if (linearProgress > 1)
+                    {
                         linearProgress = 1;
+                        initialPosition = currentGoal;
+                    }
                 }
                 if (itemState == ItemStates.ToInventory)
                     currentGoal = inInventoryPosition;

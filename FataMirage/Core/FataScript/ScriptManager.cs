@@ -56,7 +56,8 @@ namespace FataMirage.Core.FataScript
                         else if (command == "fadelayer")
                         {
                             (Scene.SceneManager.currentScene.layers[arguments[0]] as
-                                Scene.Layers.ImageLayer).opacity = 0;
+                                Scene.Layers.ImageLayer).opacity = 
+                                float.Parse(arguments[1], CultureInfo.InvariantCulture);
                         }
                         else if (command == "additem")
                         {
