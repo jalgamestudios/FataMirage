@@ -48,9 +48,16 @@ namespace FataMirage.Core.Scene
                 {
                     if (node.Name.LocalName == "ImageLayer")
                     {
+                        var layer = Layers.LayerFactory.createImageLayer("Scenes\\" + sceneName + "\\Graphics\\" + node.Attribute("Texture").Value,
+                            float.Parse(node.Attribute("Depth").Value, CultureInfo.InvariantCulture));
+                        if (node.Attribute("Opacity") != null)
+                            (layer as Scene.Layers.ImageLayer).opacity = 
+                                float.Parse(node.Attribute("Opacity").Value, CultureInfo.InvariantCulture);
+                        if (node.Attribute("Visible") != null)
+                            (layer as Scene.Layers.ImageLayer).visible = 
+                                Convert.ToBoolean(node.Attribute("Visible").Value, CultureInfo.InvariantCulture);
                         scene.layers.Add(node.Attribute("Name").Value,
-                            Layers.LayerFactory.createImageLayer("Scenes\\" + sceneName + "\\Graphics\\" + node.Attribute("Texture").Value,
-                            float.Parse(node.Attribute("Depth").Value, CultureInfo.InvariantCulture)));
+                            layer);
                     }
                     else if (node.Name.LocalName == "WalkingPoint")
                     {
