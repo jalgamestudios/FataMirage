@@ -75,6 +75,20 @@ namespace FataMirage.Core.Player.Inventory
         public bool OnStage;
 
         /// <summary>
+        /// The different states an item can be in
+        /// </summary>
+        public enum ItemStates
+        {
+            ToInventory,
+            ToScene,
+        }
+
+        /// <summary>
+        /// The state this itme is currently in
+        /// </summary>
+        public ItemStates itemState;
+
+        /// <summary>
         /// Updates the item and moves it towards its goal
         /// </summary>
         /// <param name="elapsedTime">The time since this method was called the last time, emasured in seconds</param>
@@ -91,7 +105,8 @@ namespace FataMirage.Core.Player.Inventory
                     if (linearProgress > 1)
                         linearProgress = 1;
                 }
-                currentGoal = inInventoryPosition;
+                if (itemState == ItemStates.ToInventory)
+                    currentGoal = inInventoryPosition;
             }
         }
     }

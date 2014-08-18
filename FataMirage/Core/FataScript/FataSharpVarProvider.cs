@@ -24,6 +24,8 @@ namespace FataMirage.Core.FataScript
                             return (layer as Scene.Layers.ImageLayer).opacity.ToString();
                     }
                     break;
+                case "ItemInHand":
+                    return Player.Inventory.Items.currentItem;
             }
             return "";
         }

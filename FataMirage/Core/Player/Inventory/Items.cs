@@ -13,6 +13,12 @@ namespace FataMirage.Core.Player.Inventory
         /// A list of all items avilable in the game, containting also the items that are currently not in the players inventory
         /// </summary>
         public static Dictionary<string, Item> items = new Dictionary<string, Item>();
+
+        /// <summary>
+        /// Stores the item that is currently selected (or "none" if no item is selected)
+        /// </summary>
+        public static string currentItem = "none";
+
         /// <summary>
         /// Updates all items
         /// </summary>
@@ -22,6 +28,7 @@ namespace FataMirage.Core.Player.Inventory
             for (int i = 0; i < items.Count();i++ )
                 items.ElementAt(i).Value.Update(elapsedTime, new Vector2(InventoryConfig.getBounds(i).X , 0));
         }
+
         /// <summary>
         /// The number of items that exist in total
         /// </summary>
@@ -32,6 +39,7 @@ namespace FataMirage.Core.Player.Inventory
                 return items.Count;
             }
         }
+
         /// <summary>
         /// Returns the position of the item at the given index in the item list (not the inventory)
         /// </summary>
@@ -49,6 +57,7 @@ namespace FataMirage.Core.Player.Inventory
                 InventoryConfig.height,
                 InventoryConfig.height);
         }
+
         /// <summary>
         /// Returns the texture of the item at the given index in the item list (not the inventory)
         /// </summary>
@@ -57,6 +66,14 @@ namespace FataMirage.Core.Player.Inventory
         public static Texture2D getTexture(int index)
         {
             return items.ElementAt(index).Value.texture.texture;
+        }
+
+        public static string getItemAtInventoryPosition(int inventoryPosition)
+        {
+            var itemsInInventory = items.Where(item => item.Value.OnStage).ToList();
+            if (itemsInInventory.Count <= inventoryPosition)
+                return "none";
+            return itemsInInventory.ElementAt(inventoryPosition).Key;
         }
     }
 }

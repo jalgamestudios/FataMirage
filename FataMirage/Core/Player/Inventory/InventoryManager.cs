@@ -33,6 +33,14 @@ namespace FataMirage.Core.Player.Inventory
                     }
                     return true;
                 }
+                for (int i = 0; i < InventoryConfig.InventoryWidth.width; i++)
+                {
+                    if (InventoryConfig.getBounds(i).Contains(relativePosition.X, relativePosition.Y))
+                    {
+                        Items.currentItem = Items.getItemAtInventoryPosition(i);
+                        return true;
+                    }
+                }
                 return false;
                 }));
         }
@@ -78,8 +86,14 @@ namespace FataMirage.Core.Player.Inventory
             for (int i = 0; i < Items.count; i++)
             {
                 var itembounds = Items.getPosition(i);
+                Color color = Color.White;
+                if (Items.currentItem != "none")
+                {
+                    color = Items.items.ElementAt(i).Key == Items.currentItem ? Color.White : Color.LightGray;
+                }
                 Graphics.Scaler.Draw(Items.getTexture(i),
-                    itembounds.X, itembounds.Y, itembounds.Width, itembounds.Height, 0);
+                    itembounds.X, itembounds.Y, itembounds.Width, itembounds.Height,
+                    color, 0);
             }
             var expanderBounds = InventoryConfig.getexpanderBounds();
             Graphics.Scaler.Draw(InventoryTextures.collapser.texture,
