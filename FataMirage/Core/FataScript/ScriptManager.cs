@@ -39,7 +39,7 @@ namespace FataMirage.Core.FataScript
                         {
                             if (FataSharpVarProvider.GetVar(arguments[0]) == arguments[1])
                             {
-                                while (arguments[i] != arguments[2] && i < linesPrecompiled.Count)
+                                while (lines[i] != arguments[2] && i < linesPrecompiled.Count)
                                     i++;
                                 continue;
                             }
@@ -48,7 +48,7 @@ namespace FataMirage.Core.FataScript
                         {
                             if (FataSharpVarProvider.GetVar(arguments[0]) != arguments[1])
                             {
-                                while (arguments[i] != arguments[2] && i < linesPrecompiled.Count)
+                                while (lines[i] != arguments[2] && i < linesPrecompiled.Count)
                                     i++;
                                 continue;
                             }
@@ -61,7 +61,7 @@ namespace FataMirage.Core.FataScript
                         else if (command == "additem")
                         {
                             Player.Inventory.Items.items[arguments[0]].OnStage = true;
-                            Player.Inventory.Items.items[arguments[0]].initialPosition = new Vector2(
+                            Player.Inventory.Items.items[arguments[0]].initialPosition = new Vector2(+
                                 float.Parse(arguments[1], CultureInfo.InvariantCulture),
                                 float.Parse(arguments[2], CultureInfo.InvariantCulture));
                             Player.Inventory.Items.items[arguments[0]].linearProgress = 0;
