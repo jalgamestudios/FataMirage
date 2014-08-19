@@ -98,7 +98,7 @@ namespace FataMirage.Core.Player.Inventory
             var expanderBounds = InventoryConfig.getexpanderBounds();
             Graphics.Scaler.Draw(InventoryTextures.collapser.texture,
                 expanderBounds.X, expanderBounds.Y,
-                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, 1 - inventoryShowed), 0.05f);
+                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, 1), 0.05f);
             Graphics.Scaler.Draw(InventoryTextures.expander.texture,
                 expanderBounds.X, expanderBounds.Y,
                 expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, inventoryShowed), 0.05f);
