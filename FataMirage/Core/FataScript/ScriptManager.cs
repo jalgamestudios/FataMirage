@@ -70,7 +70,7 @@ namespace FataMirage.Core.FataScript
                         else if (command == "wait")
                         {
                             //Convert the given time which is measured in seconds to milliseconds
-                            System.Threading.Thread.Sleep((int)(float.Parse(arguments[0], CultureInfo.InvariantCulture) * 1000));
+                            Sleep((int)(float.Parse(arguments[0], CultureInfo.InvariantCulture) * 1000));
                         }
                         else if (command == "moveitem")
                         {
