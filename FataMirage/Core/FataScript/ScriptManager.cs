@@ -84,6 +84,11 @@ namespace FataMirage.Core.FataScript
                         {
                             Player.Inventory.Items.items[arguments[0]].OnStage = false;
                         }
+                        else if (command == "setconnectionenabled")
+                        {
+                            Scene.SceneManager.currentScene.waypoints.waypoints[arguments[0]].connectedTo
+                                .First(con => con.goesTo == arguments[1]).enabled = Convert.ToBoolean(arguments[2]);
+                        }
                     }
                 }));
         }

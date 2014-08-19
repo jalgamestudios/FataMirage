@@ -32,19 +32,27 @@
   <WalkingPoint Name="trigger" X="0.1375" Y="0.53125">
     <Connection Name="lamp" Speed="0.7" />
     <Connection Name="cliff-left" Speed="0.95" />
+    <Hotspot X="0.08125" Y="0.53125" Radius="0.04">
+      ifn ImageLayer.triggercable.Opacity 1 END
+      #TODO: make everything explode
+      fadelayer stones 0 0.1
+      fadelayer holefilled 1 0.1
+      setconnectionenabled cliff-left cliff-right true 
+      END
+    </Hotspot>
   </WalkingPoint>
   <WalkingPoint Name="cliff-left" X="0.35625" Y="0.5">
     <Connection Name="trigger" Speed="0.95" />
     <Connection Name="lamp" Speed="0.85" />
     <Connection Name="cliff-right" Speed="1" Enabled="false" />
-  <Hotspot X="0.275" Y="0.4875" Radius="0.04">
-    ifn ItemInHand cable END
-    moveitem cable 0.275 0.4875
-    wait 1
-    removeitem cable
-    fadelayer triggercable 1 0.2
-    END
-  </Hotspot>
+    <Hotspot X="0.275" Y="0.4875" Radius="0.04">
+      ifn ItemInHand cable END
+      moveitem cable 0.275 0.4875
+      wait 1
+      removeitem cable
+      fadelayer triggercable 1 0.2
+      END
+    </Hotspot>
   </WalkingPoint>
   <WalkingPoint Name="cliff-right" X="0.6" Y="0.48125">
     <Connection Name="cliff-left" Speed="1" />
