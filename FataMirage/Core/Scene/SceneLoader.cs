@@ -84,7 +84,7 @@ namespace FataMirage.Core.Scene
                                 FataScript.ScriptManager.AddScript(scriptName, node.Value);
                                 Hotspot hotspot = new Hotspot(float.Parse(subNode.Attribute("X").Value, CultureInfo.InvariantCulture),
                                     float.Parse(subNode.Attribute("Y").Value, CultureInfo.InvariantCulture),
-                                    float.Parse(subNode.Attribute("X").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("Radius").Value, CultureInfo.InvariantCulture),
                                     scriptName);
                                 waypoint.hotspots.Add(hotspot);
                                 hotspotCounter++;
