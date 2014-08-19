@@ -84,6 +84,9 @@
     <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\lighting.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\lightmap.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="$(MSBuildThisFileDirectory)Game\Scenes\OldFactory\Graphics\stones.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -159,6 +162,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Input\InputManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Input\Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Input\Touch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Particles\LightMap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Particles\Particle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Particles\ParticleBound.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Particles\ParticleDefinition.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Particles\ParticleHost.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryAlign.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Player\Inventory\InventoryManager.cs" />

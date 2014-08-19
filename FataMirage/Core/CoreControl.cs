@@ -20,6 +20,7 @@ namespace FataMirage.Core
             Game.LoadUI.Load();
             Scene.SceneLoader.LoadScenes();
             Player.PlayerManager.LoadContent();
+            Particles.ParticleHost.Init();
         }
         public static void Update(float elapsedTime)
         {
@@ -28,6 +29,7 @@ namespace FataMirage.Core
             {
                 Scene.SceneManager.Update(elapsedTime);
                 Player.PlayerManager.Update(elapsedTime);
+                Particles.ParticleHost.Update(elapsedTime);
             }
         }
         public static void Draw(float elapsedTime)
@@ -37,6 +39,7 @@ namespace FataMirage.Core
             {
                 Scene.SceneManager.Draw(elapsedTime);
                 Player.PlayerManager.Draw(elapsedTime);
+                Particles.ParticleHost.Draw(elapsedTime);
             }
             Input.InputManager.Draw(elapsedTime);
             Graphics.Manager.EndDraw();

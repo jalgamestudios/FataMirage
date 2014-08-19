@@ -35,6 +35,7 @@ namespace FataMirageWindowsDesktop
             spriteBatch = new SpriteBatch(GraphicsDevice);
             FataMirage.Stator.contentManager = Content;
             FataMirage.Stator.spriteBatch = spriteBatch;
+            FataMirage.Stator.device = GraphicsDevice;
             CoreControl.LoadContent();
         }
         protected override void UnloadContent()

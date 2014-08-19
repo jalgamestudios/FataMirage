@@ -12,5 +12,6 @@ namespace FataMirage
     {
         public static SpriteBatch spriteBatch;
         public static ContentManager contentManager;
+        public static GraphicsDevice device;
     }
 }

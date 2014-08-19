@@ -99,6 +99,73 @@ namespace FataMirage.Core.Scene
                             new Graphics.Texture("Scenes\\" + sceneName + "\\Graphics\\" + node.Attribute("Texture").Value));
                         Player.Inventory.Items.items.Add(node.Attribute("Name").Value, item);
                     }
+                    else if (node.Name.LocalName=="ParticleSystem")
+                    {
+                        Particles.ParticleHost.particleDefinitions = new Dictionary<int, Particles.ParticleDefinition>();
+                        Particles.ParticleHost.particleBounds = new Dictionary<string, Particles.ParticleBound>();
+                        if (node.Attribute("Lightmap") != null)
+                            Particles.LightMap.Load("Scenes\\" + sceneName + "\\Graphics\\" + node.Attribute("Lightmap").Value);
+                        foreach (XElement subNode in node.Elements())
+                        {
+                            if (subNode.Name.LocalName == "ParticleType")
+                            {
+                                Particles.ParticleDefinition definition = new Particles.ParticleDefinition(
+                                    float.Parse(subNode.Attribute("Gravity").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("Mass").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("Randomness").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("MaxSpeed").Value, CultureInfo.InvariantCulture));
+                                XElement colorElement = subNode.Element("Colors");
+                                foreach (XElement colorSubNode in colorElement.Elements())
+                                {
+                                    definition.colors.Add(new Particles.ParticleColorMapColor(
+                                            int.Parse(colorSubNode.Attribute("ColorMapR").Value, CultureInfo.InvariantCulture),
+                                            int.Parse(colorSubNode.Attribute("ColorMapG").Value, CultureInfo.InvariantCulture),
+                                            int.Parse(colorSubNode.Attribute("ColorMapB").Value, CultureInfo.InvariantCulture),
+                                            int.Parse(colorSubNode.Attribute("RMin").Value, CultureInfo.InvariantCulture),
+                                            int.Parse(colorSubNode.Attribute("GMin").Value, CultureInfo.InvariantCulture),
+                                            int.Parse(colorSubNode.Attribute("BMin").Value, CultureInfo.InvariantCulture),
+                                            int.Parse(colorSubNode.Attribute("RMax").Value, CultureInfo.InvariantCulture),
+                                            int.Parse(colorSubNode.Attribute("GMax").Value, CultureInfo.InvariantCulture),
+                                            int.Parse(colorSubNode.Attribute("BMax").Value, CultureInfo.InvariantCulture),
+                                            float.Parse(colorSubNode.Attribute("Variation").Value, CultureInfo.InvariantCulture)));
+                                }
+                                Particles.ParticleHost.particleDefinitions.Add(int.Parse(subNode.Attribute("ID").Value, CultureInfo.InvariantCulture), definition);
+                            }
+                            else if (subNode.Name.LocalName == "ParticleBound")
+                            {
+                                Particles.ParticleBound bound = new Particles.ParticleBound(
+                                    float.Parse(subNode.Attribute("X").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("Y").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("Width").Value, CultureInfo.InvariantCulture),
+                                    float.Parse(subNode.Attribute("Height").Value, CultureInfo.InvariantCulture));
+                                if (subNode.Element("InitialFill") != null)
+                                {
+                                    XElement initialFill = subNode.Element("InitialFill");
+                                    foreach (XElement iFillSubNode in initialFill.Elements())
+                                    {
+                                        if (iFillSubNode.Name.LocalName == "RandomGrid")
+                                        {
+                                            for (float i = float.Parse(iFillSubNode.Attribute("X").Value, CultureInfo.InvariantCulture);
+                                                i <= float.Parse(iFillSubNode.Attribute("Width").Value, CultureInfo.InvariantCulture);
+                                                i += float.Parse(iFillSubNode.Attribute("XSize").Value, CultureInfo.InvariantCulture))
+                                            {
+                                                for (float j = float.Parse(iFillSubNode.Attribute("Y").Value, CultureInfo.InvariantCulture);
+                                                j <= float.Parse(iFillSubNode.Attribute("Height").Value, CultureInfo.InvariantCulture);
+                                                j += float.Parse(iFillSubNode.Attribute("YSize").Value, CultureInfo.InvariantCulture))
+                                                {
+                                                    Particles.Particle particle = new Particles.Particle(
+                                                        int.Parse(iFillSubNode.Attribute("ParticleID").Value, CultureInfo.InvariantCulture),
+                                                        new Vector2(i, j));
+                                                    bound.particles.Add(particle);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    Particles.ParticleHost.particleBounds.Add(subNode.Attribute("Name").Value, bound);
+                                }
+                            }
+                        }
+                    }
                 }
                 SceneManager.scenes.Add(sceneName, scene);
             }
