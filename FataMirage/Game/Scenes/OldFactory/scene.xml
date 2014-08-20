@@ -14,12 +14,12 @@
       <!--Sorry, but only UseColorMap="true" is currently implemented.-->
       <Colors UseColorMap="true">
         <ColorMapColor ColorMapR="0" ColorMapG="0" ColorMapB="0"
-          RMin="128" GMin="101" BMin="38"
-          RMax="148" GMax="121" BMax="58"
+          RMin="128" GMin="101" BMin="38" AMin="5"
+          RMax="148" GMax="121" BMax="58" AMax="25"
           Variation="8"/>
         <ColorMapColor ColorMapR="255" ColorMapG="255" ColorMapB="255"
-          RMin="228" GMin="185" BMin="144"
-          RMax="248" GMax="215" BMax="164"
+          RMin="228" GMin="185" BMin="144" AMin="200"
+          RMax="248" GMax="215" BMax="164" AMax="240"
           Variation="4"/>
       </Colors>
     </ParticleType>
@@ -28,7 +28,7 @@
         <!--Creates a grid with the given size. In each of its cells, a particle is spawned at a random position
         (but inside the cell's bounds). This is useful to make the particles look random wile still distributing them 
         evenly across the screen-->
-        <RandomGrid X="0" Y="0" Width="1" Height="0.5625" XSize="0.05" YSize="0.05" ParticleID="1" />
+        <RandomGrid X="0" Y="0" Width="1" Height="0.5625" XSize="0.02" YSize="0.02" ParticleID="1" />
       </InitialFill>
     </ParticleBound>
   </ParticleSystem>

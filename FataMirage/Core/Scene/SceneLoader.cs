@@ -117,7 +117,7 @@ namespace FataMirage.Core.Scene
                                 XElement colorElement = subNode.Element("Colors");
                                 foreach (XElement colorSubNode in colorElement.Elements())
                                 {
-                                    definition.colors.Add(new Particles.ParticleColorMapColor(
+                                    var color = new Particles.ParticleColorMapColor(
                                             int.Parse(colorSubNode.Attribute("ColorMapR").Value, CultureInfo.InvariantCulture),
                                             int.Parse(colorSubNode.Attribute("ColorMapG").Value, CultureInfo.InvariantCulture),
                                             int.Parse(colorSubNode.Attribute("ColorMapB").Value, CultureInfo.InvariantCulture),
@@ -127,7 +127,12 @@ namespace FataMirage.Core.Scene
                                             int.Parse(colorSubNode.Attribute("RMax").Value, CultureInfo.InvariantCulture),
                                             int.Parse(colorSubNode.Attribute("GMax").Value, CultureInfo.InvariantCulture),
                                             int.Parse(colorSubNode.Attribute("BMax").Value, CultureInfo.InvariantCulture),
-                                            float.Parse(colorSubNode.Attribute("Variation").Value, CultureInfo.InvariantCulture)));
+                                            float.Parse(colorSubNode.Attribute("Variation").Value, CultureInfo.InvariantCulture));
+                                    if (colorSubNode.Attribute("AMin") != null)
+                                        color.minColor.A = (byte)int.Parse(colorSubNode.Attribute("AMin").Value, CultureInfo.InvariantCulture);
+                                    if (colorSubNode.Attribute("AMax") != null)
+                                        color.minColor.A = (byte)int.Parse(colorSubNode.Attribute("AMax").Value, CultureInfo.InvariantCulture);
+                                    definition.colors.Add(color);
                                 }
                                 Particles.ParticleHost.particleDefinitions.Add(int.Parse(subNode.Attribute("ID").Value, CultureInfo.InvariantCulture), definition);
                             }
