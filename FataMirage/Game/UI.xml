@@ -20,4 +20,22 @@
     <Expander>UI/Inventory/InventoryHidden</Expander>
     <Collapser>UI/Inventory/InventoryHidden</Collapser>
   </Inventory>
+  <Fragment Name="OptionsMenu" Visible="True" Texture="UI/Fragments/Options/Background"
+            Width="0.25" Height="0.375" HorizontalAlign="Center" VerticalAlign="Center">
+    <Button Name="SaveGame" X="0.01875" Y="0.1" Width="0.21875" Height="0.1375">
+      <OnClick>
+        # do some fancy (not yet implemented) stuff here
+      </OnClick>
+    </Button>
+    <Button Name="LoadGame" X="0.01875" Y="0.1625" Width="0.21875" Height="0.1375">
+      <OnClick>
+        # do some fancy (not yet implemented) stuff here
+      </OnClick>
+    </Button>
+    <Button Name="About" X="0.01875" Y="0.225" Width="0.21875" Height="0.1375">
+      <OnClick>
+        # do some fancy (not yet implemented) stuff here
+      </OnClick>
+    </Button>
+  </Fragment>
 </UI>

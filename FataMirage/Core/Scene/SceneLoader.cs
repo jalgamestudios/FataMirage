@@ -118,19 +118,19 @@ namespace FataMirage.Core.Scene
                                 foreach (XElement colorSubNode in colorElement.Elements())
                                 {
                                     var color = new Particles.ParticleColorMapColor(
-                                            int.Parse(colorSubNode.Attribute("ColorMapR").Value, CultureInfo.InvariantCulture),
-                                            int.Parse(colorSubNode.Attribute("ColorMapG").Value, CultureInfo.InvariantCulture),
-                                            int.Parse(colorSubNode.Attribute("ColorMapB").Value, CultureInfo.InvariantCulture),
-                                            int.Parse(colorSubNode.Attribute("RMin").Value, CultureInfo.InvariantCulture),
-                                            int.Parse(colorSubNode.Attribute("GMin").Value, CultureInfo.InvariantCulture),
-                                            int.Parse(colorSubNode.Attribute("BMin").Value, CultureInfo.InvariantCulture),
-                                            int.Parse(colorSubNode.Attribute("RMax").Value, CultureInfo.InvariantCulture),
-                                            int.Parse(colorSubNode.Attribute("GMax").Value, CultureInfo.InvariantCulture),
-                                            int.Parse(colorSubNode.Attribute("BMax").Value, CultureInfo.InvariantCulture),
-                                            float.Parse(colorSubNode.Attribute("Variation").Value, CultureInfo.InvariantCulture));
+                                        int.Parse(colorSubNode.Attribute("ColorMapR").Value, CultureInfo.InvariantCulture),
+                                        int.Parse(colorSubNode.Attribute("ColorMapG").Value, CultureInfo.InvariantCulture),
+                                        int.Parse(colorSubNode.Attribute("ColorMapB").Value, CultureInfo.InvariantCulture),
+                                        int.Parse(colorSubNode.Attribute("RMin").Value, CultureInfo.InvariantCulture),
+                                        int.Parse(colorSubNode.Attribute("GMin").Value, CultureInfo.InvariantCulture),
+                                        int.Parse(colorSubNode.Attribute("BMin").Value, CultureInfo.InvariantCulture),
+                                        int.Parse(colorSubNode.Attribute("RMax").Value, CultureInfo.InvariantCulture),
+                                        int.Parse(colorSubNode.Attribute("GMax").Value, CultureInfo.InvariantCulture),
+                                        int.Parse(colorSubNode.Attribute("BMax").Value, CultureInfo.InvariantCulture),
+                                        float.Parse(colorSubNode.Attribute("Variation").Value, CultureInfo.InvariantCulture));
                                     if (colorSubNode.Attribute("AMin") != null)
                                         color.minColor.A = (byte)int.Parse(colorSubNode.Attribute("AMin").Value, CultureInfo.InvariantCulture);
-                                    if (colorSubNode.Attribute("AMax") != null)
+                                    if (colorSubNode.Attribute("AMax") != null) 
                                         color.minColor.A = (byte)int.Parse(colorSubNode.Attribute("AMax").Value, CultureInfo.InvariantCulture);
                                     definition.colors.Add(color);
                                 }
