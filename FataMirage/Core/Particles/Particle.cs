@@ -18,6 +18,16 @@ namespace FataMirage.Core.Particles
                 return ParticleHost.particleDefinitions[typeID];
             }
         }
+        public Color currentColor
+        {
+            get
+            {
+                Color lightmapColor = LightMap.getColorAtWorldspace(position.X, position.Y);
+                if (currentColors.ContainsKey(lightmapColor))
+                    return currentColors[lightmapColor];
+                return new Color(255, 255, 255);
+            }
+        }
         public Particle(int typeID, Vector2 position)
         {
             this.typeID = typeID;
@@ -57,7 +67,7 @@ namespace FataMirage.Core.Particles
         }
         public void Draw(float elapsedTime)
         {
-            Graphics.Scaler.Draw(ParticleHost.particleTexture, position.X, position.Y, 1 / 160f, 1 / 160f, 0.01f);
+            Graphics.Scaler.Draw(ParticleHost.particleTexture, position.X, position.Y, 1 / 160f, 1 / 160f, currentColor, 0.01f);
         }
     }
 }
