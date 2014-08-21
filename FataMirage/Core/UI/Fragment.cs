@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using SharpDX;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,8 @@ namespace FataMirage.Core.UI
         public HorizontalAligns horizontalAlign;
         public VerticalAligns verticalAlign;
         public Texture2D texture;
+        public float depth;
+        public SideClick sideClick;
         public float x
         {
             get
@@ -37,6 +40,13 @@ namespace FataMirage.Core.UI
                     case VerticalAligns.Bottom: return 1 - height;
                 }
                 return 0;
+            }
+        }
+        public RectangleF bounds
+        {
+            get
+            {
+                return new RectangleF(x, y, width, height);
             }
         }
         public enum HorizontalAligns
@@ -71,25 +81,72 @@ namespace FataMirage.Core.UI
             }
             return VerticalAligns.Center;
         }
+        public enum SideClick
+        {
+            LetThrough,
+            Close,
+            Block
+        }
+        public static SideClick createSideClick(string value)
+        {
+            switch (value)
+            {
+                case "LetThrough": return SideClick.LetThrough;
+                case "Close": return SideClick.Close;
+                case "Block": return SideClick.Block;
+            }
+            return SideClick.Block;
+        }
         public Fragment(float width, float height,
             HorizontalAligns horizontalAlign, VerticalAligns verticalAlign,
-            Texture2D texture)
+            Texture2D texture, SideClick sideClick)
         {
             this.width = width;
             this.height = height;
             this.horizontalAlign = horizontalAlign;
             this.verticalAlign = verticalAlign;
             this.texture = texture;
+            this.sideClick = sideClick;
+            createClickHandler();
         }
         public Fragment(float width, float height,
             HorizontalAligns horizontalAlign, VerticalAligns verticalAlign,
-            string textureName)
+            string textureName, SideClick sideClick)
         {
             this.width = width;
             this.height = height;
             this.horizontalAlign = horizontalAlign;
             this.verticalAlign = verticalAlign;
             this.texture = Stator.contentManager.Load<Texture2D>(textureName);
+            this.sideClick = sideClick;
+            createClickHandler();
+        }
+        void createClickHandler()
+        {
+            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(
+                depth, (x, y) =>
+                {
+                    if (visible)
+                    {
+                        x = Graphics.Scaler.screenToWorld(x);
+                        y = Graphics.Scaler.screenToWorld(y);
+                        if (bounds.Contains(x, y))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            switch (sideClick)
+                            {
+                                case SideClick.Block: return true; //No, you won't get through here!
+                                case SideClick.Close: visible = false; return true; //Close the fragment, but block the tap, because it was only intended to close the popup, not to interact with the scene
+                                case SideClick.LetThrough: return false; //Just let it through...
+                            }
+                        }
+                    }
+                    //The fragment isn't visible, so it can't be clicked
+                    return false;
+                }));
         }
         public void Update(float elapsedTime)
         {
@@ -97,6 +154,7 @@ namespace FataMirage.Core.UI
         }
         public void Draw(float elapsedTime)
         {
+            if (visible)
             Graphics.Scaler.Draw(texture, x, y, width, height, 0.2f);
         }
     }

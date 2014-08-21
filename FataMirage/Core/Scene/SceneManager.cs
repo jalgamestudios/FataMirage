@@ -16,7 +16,7 @@ namespace FataMirage.Core.Scene
         }
         public static void Init()
         {
-            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(1.5f, (x, y) =>
+            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(0.4f, (x, y) =>
                 {
                     foreach (var hotspot in currentScene.waypoints.waypoints[Player.Legs.currentPositionName].hotspots)
                     {

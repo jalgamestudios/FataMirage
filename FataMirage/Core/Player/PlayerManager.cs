@@ -13,7 +13,7 @@ namespace FataMirage.Core.Player
         {
             Legs.Init();
             Inventory.InventoryManager.Init();
-            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(1, (x, y) =>
+            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(0.2f, (x, y) =>
                 {
                     if (!Player.Legs.isWalking)
                     {

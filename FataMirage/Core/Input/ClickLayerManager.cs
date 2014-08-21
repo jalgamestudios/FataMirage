@@ -12,7 +12,7 @@ namespace FataMirage.Core.Input
         {
             if (InputManager.pointerState == InputManager.PointerStates.Click)
             {
-                foreach (var clickLayer in clickLayers.OrderByDescending(cl => cl.zIndex))
+                foreach (var clickLayer in clickLayers.OrderBy(cl => cl.zIndex))
                 {
                     if (clickLayer.checkClick(InputManager.pointerX, InputManager.pointerY))
                         break;

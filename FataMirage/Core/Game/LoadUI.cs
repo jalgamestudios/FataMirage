@@ -109,7 +109,10 @@ namespace FataMirage.Core.Game
                         float.Parse(node.Attribute("Height").Value, CultureInfo.InvariantCulture),
                         UI.Fragment.createHorizontalAlign(node.Attribute("HorizontalAlign").Value),
                         UI.Fragment.createVerticalAlign(node.Attribute("VerticalAlign").Value),
-                        node.Attribute("Texture").Value);
+                        node.Attribute("Texture").Value,
+                        UI.Fragment.createSideClick(node.Attribute("SideClick").Value));
+                    if (node.Attribute("Visible") != null)
+                        fragment.visible = Convert.ToBoolean(node.Attribute("Visible").Value);
                     foreach (XElement buttonElement in node.Elements("Button"))
                     {
                         UI.Button button = new UI.Button(

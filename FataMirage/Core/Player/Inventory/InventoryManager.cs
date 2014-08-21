@@ -21,7 +21,7 @@ namespace FataMirage.Core.Player.Inventory
         public static void Init()
         {
             inventoryShowedGoal = 1;
-            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(2, (x, y) =>
+            Input.ClickLayerManager.clickLayers.Add(new Input.ClickLayer(InventoryConfig.zIndex, (x, y) =>
             {
                 var relativePosition = Graphics.Scaler.screenToWorld(x, y);
                 if (InventoryConfig.getexpanderBounds().Contains(relativePosition.X, relativePosition.Y))
