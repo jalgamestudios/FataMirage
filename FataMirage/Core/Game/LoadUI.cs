@@ -122,7 +122,7 @@ namespace FataMirage.Core.Game
                             float.Parse(buttonElement.Attribute("Width").Value, CultureInfo.InvariantCulture),
                             float.Parse(buttonElement.Attribute("Height").Value, CultureInfo.InvariantCulture),
                             buttonElement.Element("OnClick").Value);
-                        //TODO: Add the button to the fragment
+                        fragment.controls.Add(button);
                     }
                     UI.UIManager.fragments.Add(fragment);
                 }

@@ -23,17 +23,18 @@
   <Fragment Name="OptionsMenu" Visible="True" Texture="UI/Fragments/Options/Background"
             Width="0.25" Height="0.375" HorizontalAlign="Center" VerticalAlign="Center"
             SideClick="Close">
-    <Button Name="SaveGame" X="0.01875" Y="0.1" Width="0.21875" Height="0.1375">
+    <Button Name="SaveGame" X="0.01875" Y="0.1" Width="0.21875" Height="0.04375">
+      <OnClick>
+        # do some fancy (not yet implemented) stuff here
+      additem cable 0.1875 0.375
+      </OnClick>
+    </Button>
+    <Button Name="LoadGame" X="0.01875" Y="0.1625" Width="0.21875" Height="0.04375">
       <OnClick>
         # do some fancy (not yet implemented) stuff here
       </OnClick>
     </Button>
-    <Button Name="LoadGame" X="0.01875" Y="0.1625" Width="0.21875" Height="0.1375">
-      <OnClick>
-        # do some fancy (not yet implemented) stuff here
-      </OnClick>
-    </Button>
-    <Button Name="About" X="0.01875" Y="0.225" Width="0.21875" Height="0.1375">
+    <Button Name="About" X="0.01875" Y="0.225" Width="0.21875" Height="0.04375">
       <OnClick>
         # do some fancy (not yet implemented) stuff here
       </OnClick>

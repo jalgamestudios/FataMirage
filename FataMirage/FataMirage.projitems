@@ -195,6 +195,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Storage\SaveScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\UI\Button.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\UI\Fragment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\UI\IControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\UI\UIManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Debugging\Logger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Stator.cs" />

@@ -16,6 +16,7 @@ namespace FataMirage.Core.UI
         public Texture2D texture;
         public float depth;
         public SideClick sideClick;
+        public List<IControl> controls;
         public float x
         {
             get
@@ -107,6 +108,7 @@ namespace FataMirage.Core.UI
             this.verticalAlign = verticalAlign;
             this.texture = texture;
             this.sideClick = sideClick;
+            this.controls = new List<IControl>();
             createClickHandler();
         }
         public Fragment(float width, float height,
@@ -119,6 +121,7 @@ namespace FataMirage.Core.UI
             this.verticalAlign = verticalAlign;
             this.texture = Stator.contentManager.Load<Texture2D>(textureName);
             this.sideClick = sideClick;
+            this.controls = new List<IControl>();
             createClickHandler();
         }
         void createClickHandler()
@@ -132,6 +135,14 @@ namespace FataMirage.Core.UI
                         y = Graphics.Scaler.screenToWorld(y);
                         if (bounds.Contains(x, y))
                         {
+                            foreach (var control in controls)
+                            {
+                                if (new RectangleF(control.bounds.X + this.x, control.bounds.Y + this.y, 
+                                    control.bounds.Width, control.bounds.Height).Contains(x, y))
+                                {
+                                    control.clicked(x - this.x, y - this.y);
+                                }
+                            }
                             return true;
                         }
                         else
