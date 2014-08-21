@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Scene>
   <ImageLayer Depth="1" Texture="background" Name="background"/>
-  <ImageLayer Depth="0.9" Texture="stones" Name="stones" />
-  <ImageLayer Depth="0.1" Texture="lighting" Name="lighting" />
-  <ImageLayer Depth="0.8" Texture="lampcable" Name="lampcable" />
-  <ImageLayer Depth="0.7" Texture="triggercable" Name="triggercable" Visible="false"/>
-  <ImageLayer Depth="0.6" Texture="holefilled" Name="holefilled" Visible="false" />
+  <ImageLayer Depth="0.91" Texture="stones" Name="stones" />
+  <ImageLayer Depth="0.5" Texture="lighting" Name="lighting" />
+  <ImageLayer Depth="0.92" Texture="lampcable" Name="lampcable" />
+  <ImageLayer Depth="0.93" Texture="triggercable" Name="triggercable" Visible="false"/>
+  <ImageLayer Depth="0.94" Texture="holefilled" Name="holefilled" Visible="false" />
   <Item Name="cable" Texture="itemcable" OnStage="false" />
   <ParticleSystem Lightmap="lightmap">
     <!--For performance reasons, we use a numeric ID instead of a string, 

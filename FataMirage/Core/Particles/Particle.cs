@@ -67,7 +67,7 @@ namespace FataMirage.Core.Particles
         }
         public void Draw(float elapsedTime)
         {
-            Graphics.Scaler.Draw(ParticleHost.particleTexture, position.X, position.Y, 1 / 160f, 1 / 160f, currentColor, 0.01f);
+            Graphics.Scaler.Draw(ParticleHost.particleTexture, position.X, position.Y, 1 / 160f, 1 / 160f, currentColor, 0.5f);
         }
     }
 }

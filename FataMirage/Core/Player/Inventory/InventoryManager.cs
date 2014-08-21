@@ -69,39 +69,37 @@ namespace FataMirage.Core.Player.Inventory
             {
                 var leftBounds = InventoryConfig.getLeftSideBounds();
                 Graphics.Scaler.Draw(InventoryTextures.leftSide.texture,
-                    leftBounds.X, leftBounds.Y, leftBounds.Width, leftBounds.Height, 0.05f);
+                    leftBounds.X, leftBounds.Y, leftBounds.Width, leftBounds.Height, InventoryConfig.zIndex);
             }
             for (int i = 0; i < InventoryConfig.InventoryWidth.width; i++)
             {
                 var bounds = InventoryConfig.getBounds(i);
                 Graphics.Scaler.Draw(InventoryTextures.itemHighlight.texture,
-                    bounds.X, bounds.Y, bounds.Width, bounds.Height, 0.05f);
+                    bounds.X, bounds.Y, bounds.Width, bounds.Height, InventoryConfig.zIndex);
             }
             if (InventoryConfig.hasRight)
             {
                 var rightBounds = InventoryConfig.getRightSideBounds();
                 Graphics.Scaler.Draw(InventoryTextures.rightSide.texture,
-                    rightBounds.X, rightBounds.Y, rightBounds.Width, rightBounds.Height, 0.05f);
+                    rightBounds.X, rightBounds.Y, rightBounds.Width, rightBounds.Height, InventoryConfig.zIndex);
             }
             for (int i = 0; i < Items.count; i++)
             {
                 var itembounds = Items.getPosition(i);
                 Color color = Color.White;
                 if (Items.currentItem != "none")
-                {
                     color = Items.items.ElementAt(i).Key == Items.currentItem ? Color.White : Color.LightGray;
-                }
                 Graphics.Scaler.Draw(Items.getTexture(i),
                     itembounds.X, itembounds.Y, itembounds.Width, itembounds.Height,
-                    color, 0);
+                    color, InventoryConfig.zIndexItems);
             }
             var expanderBounds = InventoryConfig.getexpanderBounds();
             Graphics.Scaler.Draw(InventoryTextures.collapser.texture,
                 expanderBounds.X, expanderBounds.Y,
-                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, 1), 0.05f);
+                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, 1), InventoryConfig.zIndex);
             Graphics.Scaler.Draw(InventoryTextures.expander.texture,
                 expanderBounds.X, expanderBounds.Y,
-                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, inventoryShowed), 0.05f);
+                expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, inventoryShowed), InventoryConfig.zIndex);
         }
     }
 }

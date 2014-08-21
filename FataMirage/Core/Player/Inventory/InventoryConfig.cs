@@ -220,10 +220,22 @@ namespace FataMirage.Core.Player.Inventory
                 return 0;
             }
         }
+        /// <summary>
+        /// Gets the bounds of the expander / collapsor button
+        /// </summary>
+        /// <returns></returns>
         public static RectangleF getexpanderBounds()
         {
             return new RectangleF(inventoryLeft + percentualWidth / 2 - InventoryTextures.collapser.getWidthByHeight(height / 2),
                 InventoryManager.inventoryShowed * height, InventoryTextures.collapser.getWidthByHeight(height / 2), height / 2);
         }
+        /// <summary>
+        /// The depth of the inventory
+        /// </summary>
+        public static float zIndex = 0.4f;
+        /// <summary>
+        /// The depth of the items displayed in the inventory (should be lower than zIndex)
+        /// </summary>
+        public static float zIndexItems = 0.39f;
     }
 }
