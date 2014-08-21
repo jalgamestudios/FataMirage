@@ -117,6 +117,9 @@
     <Content Include="$(MSBuildThisFileDirectory)Game\UI.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Game\UI\Fragments\Options\Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="$(MSBuildThisFileDirectory)Game\UI\Inventory\InventoryBlank.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -190,7 +193,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\SceneState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Storage\LoadScene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene\Storage\SaveScene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\UI\Button.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\UI\Fragment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\UI\UIManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Debugging\Logger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Stator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Game\Scenes\MainMenu\Graphics\SceneSource.pdn" />
+    <None Include="$(MSBuildThisFileDirectory)Game\UI\Fragments\Options\Source.pdn">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -102,6 +102,27 @@ namespace FataMirage.Core.Game
                         }
                     }
                 }
+                else if (node.Name.LocalName == "Fragment")
+                {
+                    UI.Fragment fragment = new UI.Fragment(
+                        float.Parse(node.Attribute("Width").Value, CultureInfo.InvariantCulture),
+                        float.Parse(node.Attribute("Height").Value, CultureInfo.InvariantCulture),
+                        UI.Fragment.createHorizontalAlign(node.Attribute("HorizontalAlign").Value),
+                        UI.Fragment.createVerticalAlign(node.Attribute("VerticalAlign").Value),
+                        node.Attribute("Texture").Value);
+                    foreach (XElement buttonElement in node.Elements("Button"))
+                    {
+                        UI.Button button = new UI.Button(
+                            buttonElement.Attribute("Name").Value,
+                            float.Parse(buttonElement.Attribute("X").Value, CultureInfo.InvariantCulture),
+                            float.Parse(buttonElement.Attribute("Y").Value, CultureInfo.InvariantCulture),
+                            float.Parse(buttonElement.Attribute("Width").Value, CultureInfo.InvariantCulture),
+                            float.Parse(buttonElement.Attribute("Height").Value, CultureInfo.InvariantCulture),
+                            buttonElement.Element("OnClick").Value);
+                        //TODO: Add the button to the fragment
+                    }
+                    UI.UIManager.fragments.Add(fragment);
+                }
                 else
                     Debug.WriteLine("UI.xml: Unknown element (" + node.Name.LocalName + ")");
             }

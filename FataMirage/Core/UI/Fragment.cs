@@ -17,6 +17,12 @@ namespace FataMirage.Core.UI
         {
             get
             {
+                switch (horizontalAlign)
+                {
+                    case HorizontalAligns.Left: return 0;
+                    case HorizontalAligns.Center: return 0.5f - width / 2; // 50% of the screen width - 50% of the fragment's width
+                    case HorizontalAligns.Right: return 1 - width;
+                }
                 return 0;
             }
         }
@@ -24,6 +30,12 @@ namespace FataMirage.Core.UI
         {
             get
             {
+                switch (verticalAlign)
+                {
+                    case VerticalAligns.Top: return 0;
+                    case VerticalAligns.Center: return (0.5f / Graphics.Settings.renderAspectRatio) - height / 2;
+                    case VerticalAligns.Bottom: return 1 - height;
+                }
                 return 0;
             }
         }
