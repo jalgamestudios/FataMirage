@@ -63,9 +63,9 @@ namespace FataMirage.Core.Player.Inventory
         /// </summary>
         /// <param name="index">The index in the item list</param>
         /// <returns>The texture of the item</returns>
-        public static Texture2D getTexture(int index)
+        public static Graphics.Texture getTexture(int index)
         {
-            return items.ElementAt(index).Value.texture.texture;
+            return items.ElementAt(index).Value.texture;
         }
 
         public static string getItemAtInventoryPosition(int inventoryPosition)

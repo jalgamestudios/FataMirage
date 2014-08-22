@@ -10,13 +10,15 @@ namespace FataMirage.Core.Particles
     {
         public static Dictionary<int, ParticleDefinition> particleDefinitions;
         public static Dictionary<string, ParticleBound> particleBounds;
-        public static Texture2D particleTexture; //Please note that custom particle textures are planned in the future, but for pixel art, we can go with single pixels
+        public static Graphics.Texture particleTexture; //Please note that custom particle textures are planned in the future, but for pixel art, we can go with single pixels
         public static void Init()
         {
             Color[] colors = new Color[1];
             colors[0] = new Color(255, 255, 255, 255);
-            particleTexture = new Texture2D(Stator.device, 1, 1, false, SurfaceFormat.Color);
-            particleTexture.SetData(colors);
+            Texture2D tempTexture = new Texture2D(Stator.device, 1, 1, false, SurfaceFormat.Color);
+            tempTexture.SetData(colors);
+            particleTexture = new Graphics.Texture("#ParticleTexture", tempTexture);
+            tempTexture.Dispose();
         }
         public static void Update(float elapsedTime)
         {

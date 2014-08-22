@@ -25,8 +25,7 @@
             SideClick="Close">
     <Button Name="SaveGame" X="0.01875" Y="0.1" Width="0.21875" Height="0.04375">
       <OnClick>
-        # do some fancy (not yet implemented) stuff here
-      additem cable 0.1875 0.375
+        # do something just to show the people how awesome this is!
       </OnClick>
     </Button>
     <Button Name="LoadGame" X="0.01875" Y="0.1625" Width="0.21875" Height="0.04375">

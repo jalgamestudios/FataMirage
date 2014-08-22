@@ -68,19 +68,19 @@ namespace FataMirage.Core.Player.Inventory
             if (InventoryConfig.hasLeft)
             {
                 var leftBounds = InventoryConfig.getLeftSideBounds();
-                Graphics.Scaler.Draw(InventoryTextures.leftSide.texture,
+                Graphics.Scaler.Draw(InventoryTextures.leftSide,
                     leftBounds.X, leftBounds.Y, leftBounds.Width, leftBounds.Height, InventoryConfig.zIndex);
             }
             for (int i = 0; i < InventoryConfig.InventoryWidth.width; i++)
             {
                 var bounds = InventoryConfig.getBounds(i);
-                Graphics.Scaler.Draw(InventoryTextures.itemHighlight.texture,
+                Graphics.Scaler.Draw(InventoryTextures.itemHighlight,
                     bounds.X, bounds.Y, bounds.Width, bounds.Height, InventoryConfig.zIndex);
             }
             if (InventoryConfig.hasRight)
             {
                 var rightBounds = InventoryConfig.getRightSideBounds();
-                Graphics.Scaler.Draw(InventoryTextures.rightSide.texture,
+                Graphics.Scaler.Draw(InventoryTextures.rightSide,
                     rightBounds.X, rightBounds.Y, rightBounds.Width, rightBounds.Height, InventoryConfig.zIndex);
             }
             for (int i = 0; i < Items.count; i++)
@@ -94,10 +94,10 @@ namespace FataMirage.Core.Player.Inventory
                     color, InventoryConfig.zIndexItems);
             }
             var expanderBounds = InventoryConfig.getexpanderBounds();
-            Graphics.Scaler.Draw(InventoryTextures.collapser.texture,
+            Graphics.Scaler.Draw(InventoryTextures.collapser,
                 expanderBounds.X, expanderBounds.Y,
                 expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, 1), InventoryConfig.zIndex);
-            Graphics.Scaler.Draw(InventoryTextures.expander.texture,
+            Graphics.Scaler.Draw(InventoryTextures.expander,
                 expanderBounds.X, expanderBounds.Y,
                 expanderBounds.Width, expanderBounds.Height, new Color(1f, 1f, 1f, inventoryShowed), InventoryConfig.zIndex);
         }

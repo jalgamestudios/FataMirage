@@ -56,25 +56,25 @@ namespace FataMirage.Core.Game
                     foreach (XElement subNode in node.Elements())
                     {
                         if (subNode.Name.LocalName == "StandingFront")
-                            Player.TextureProvider.standingFront = new Graphics.Texture(Stator.contentManager.Load<Texture2D>(subNode.Value));
+                            Player.TextureProvider.standingFront = new Graphics.Texture(subNode.Value);
                         else if (subNode.Name.LocalName == "StandingLeft")
-                            Player.TextureProvider.standingLeft = new Graphics.Texture(Stator.contentManager.Load<Texture2D>(subNode.Value));
+                            Player.TextureProvider.standingLeft = new Graphics.Texture(subNode.Value);
                         else if (subNode.Name.LocalName == "StandingBack")
-                            Player.TextureProvider.standingBack = new Graphics.Texture(Stator.contentManager.Load<Texture2D>(subNode.Value));
+                            Player.TextureProvider.standingBack = new Graphics.Texture(subNode.Value);
                         else if (subNode.Name.LocalName == "StandingRight")
-                            Player.TextureProvider.standingRight = new Graphics.Texture(Stator.contentManager.Load<Texture2D>(subNode.Value));
+                            Player.TextureProvider.standingRight = new Graphics.Texture(subNode.Value);
                         else if (subNode.Name.LocalName == "WalkingRight")
                             foreach (XElement subSubNode in subNode.Elements())
-                                Player.TextureProvider.walkingRight.Add(new Graphics.Texture(Stator.contentManager.Load<Texture2D>(subSubNode.Value)));
+                                Player.TextureProvider.walkingRight.Add(new Graphics.Texture(subSubNode.Value));
                         else if (subNode.Name.LocalName == "WalkingLeft")
                             foreach (XElement subSubNode in subNode.Elements())
-                                Player.TextureProvider.walkingLeft.Add(new Graphics.Texture(Stator.contentManager.Load<Texture2D>(subSubNode.Value)));
+                                Player.TextureProvider.walkingLeft.Add(new Graphics.Texture(subSubNode.Value));
                         else if (subNode.Name.LocalName == "WalkingUp")
                             foreach (XElement subSubNode in subNode.Elements())
-                                Player.TextureProvider.walkingTop.Add(new Graphics.Texture(Stator.contentManager.Load<Texture2D>(subSubNode.Value)));
+                                Player.TextureProvider.walkingTop.Add(new Graphics.Texture(subSubNode.Value));
                         else if (subNode.Name.LocalName == "WalkingDown")
                             foreach (XElement subSubNode in subNode.Elements())
-                                Player.TextureProvider.walkingBottom.Add(new Graphics.Texture(Stator.contentManager.Load<Texture2D>(subSubNode.Value)));
+                                Player.TextureProvider.walkingBottom.Add(new Graphics.Texture(subSubNode.Value));
                     }
                 }
                 else

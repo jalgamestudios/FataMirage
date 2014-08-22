@@ -44,7 +44,7 @@ namespace FataMirage.Core.Player
         public static void Draw(float elapsedTime)
         {
             Legs.Draw(elapsedTime);
-            Graphics.Scaler.Draw(TextureProvider.currentTexture.texture,
+            Graphics.Scaler.Draw(TextureProvider.currentTexture,
                 Legs.currentPosition.X - TextureProvider.currentTexture.texture.Width / 2f / (float)Graphics.Settings.renderWidth,
                 Legs.currentPosition.Y - TextureProvider.currentTexture.texture.Height / (float)Graphics.Settings.renderWidth,
                 TextureProvider.currentTexture.texture.Width / (float)Graphics.Settings.renderWidth,

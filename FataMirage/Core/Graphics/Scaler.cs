@@ -10,15 +10,15 @@ namespace FataMirage.Core.Graphics
 {
     class Scaler
     {
-        public static void Draw(Texture2D texture, float x, float y, float width, float height, float depth)
+        public static void Draw(Graphics.Texture texture, float x, float y, float width, float height, float depth)
         {
             Draw(texture, x, y, width, height, Color.White, depth);
         }
-        public static void Draw(Texture2D texture, float x, float y, float width, float height, Color color, float depth)
+        public static void Draw(Graphics.Texture texture, float x, float y, float width, float height, Color color, float depth)
         {
             if (Settings.actualScreenWidth / Settings.actualScreenHeight < (Settings.renderWidth / (float)Settings.renderHeight))
             {
-                Stator.spriteBatch.Draw(texture, new Rectangle((int)(x * Settings.actualScreenWidth),
+                Stator.spriteBatch.Draw(texture.texture, new Rectangle((int)(x * Settings.actualScreenWidth),
                     (int)((Settings.actualScreenHeight - Settings.actualScreenWidth / (Settings.renderWidth / (float)Settings.renderHeight)) / 2 + y * Settings.actualScreenWidth),
                     (int)(width * Settings.actualScreenWidth) + 1,
                     (int)(height * Settings.actualScreenWidth) + 1),
@@ -31,7 +31,7 @@ namespace FataMirage.Core.Graphics
             }
             else
             {
-                Stator.spriteBatch.Draw(texture, new Rectangle((int)((Settings.actualScreenWidth - Settings.actualScreenHeight * (Settings.renderWidth / (float)Settings.renderHeight)) / 2 + x * Settings.actualScreenHeight),
+                Stator.spriteBatch.Draw(texture.texture, new Rectangle((int)((Settings.actualScreenWidth - Settings.actualScreenHeight * (Settings.renderWidth / (float)Settings.renderHeight)) / 2 + x * Settings.actualScreenHeight),
                     (int)(y * Settings.actualScreenHeight),
                     (int)(width * Settings.actualScreenHeight) + 1,
                     (int)(height * Settings.actualScreenHeight) + 1),

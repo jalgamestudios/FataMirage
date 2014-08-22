@@ -12,14 +12,24 @@ namespace FataMirage.Core.Graphics
 {
     class Texture
     {
-        public Texture2D texture;
+        public static Dictionary<string, Texture2D> textureAtlas = new Dictionary<string, Texture2D>();
+        public Texture2D texture
+        {
+            get { return textureAtlas[textureName]; }
+        }
+        private string textureName;
         public Texture(string fileName)
         {
-            texture = Stator.contentManager.Load<Texture2D>(fileName);
+            if (!textureAtlas.ContainsKey(fileName))
+                textureAtlas.Add(fileName, Stator.contentManager.Load<Texture2D>(fileName));
+            textureName = fileName;
         }
-        public Texture(Texture2D texture)
+        public Texture(string name, Texture2D texture)
         {
-            this.texture = texture;
+            //this.texture = texture;
+            if (!textureAtlas.ContainsKey(name))
+                textureAtlas.Add(name, texture);
+            textureName = name;
         }
         public Color GetPixel(int x, int y)
         {

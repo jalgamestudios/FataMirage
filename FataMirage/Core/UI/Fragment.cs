@@ -13,7 +13,7 @@ namespace FataMirage.Core.UI
         public float height;
         public HorizontalAligns horizontalAlign;
         public VerticalAligns verticalAlign;
-        public Texture2D texture;
+        public Graphics.Texture texture;
         public float depth;
         public SideClick sideClick;
         public List<IControl> controls;
@@ -100,7 +100,7 @@ namespace FataMirage.Core.UI
         }
         public Fragment(float width, float height,
             HorizontalAligns horizontalAlign, VerticalAligns verticalAlign,
-            Texture2D texture, SideClick sideClick)
+            Graphics.Texture texture, SideClick sideClick)
         {
             this.width = width;
             this.height = height;
@@ -119,7 +119,7 @@ namespace FataMirage.Core.UI
             this.height = height;
             this.horizontalAlign = horizontalAlign;
             this.verticalAlign = verticalAlign;
-            this.texture = Stator.contentManager.Load<Texture2D>(textureName);
+            this.texture = new Graphics.Texture(textureName);
             this.sideClick = sideClick;
             this.controls = new List<IControl>();
             createClickHandler();
