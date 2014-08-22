@@ -18,7 +18,6 @@ namespace FataMirage.Core.Particles
             Texture2D tempTexture = new Texture2D(Stator.device, 1, 1, false, SurfaceFormat.Color);
             tempTexture.SetData(colors);
             particleTexture = new Graphics.Texture("#ParticleTexture", tempTexture);
-            tempTexture.Dispose();
         }
         public static void Update(float elapsedTime)
         {
