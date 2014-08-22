@@ -56,6 +56,21 @@ namespace FataMirage.Core.Scene
                         if (node.Attribute("Visible") != null)
                             (layer as Scene.Layers.ImageLayer).visible = 
                                 Convert.ToBoolean(node.Attribute("Visible").Value, CultureInfo.InvariantCulture);
+                        foreach (XElement animationElement in node.Elements("Animation"))
+                        {
+                            Graphics.Animation animation = new Graphics.Animation();
+                            foreach (XElement frameElement in animationElement.Elements("Frame"))
+                            {
+                                Graphics.Frame frame = new Graphics.Frame(
+                                    "Scenes\\" + sceneName + "\\Graphics\\" + frameElement.Attribute("Texture").Value,
+                                    float.Parse(frameElement.Attribute("Duration").Value, CultureInfo.InvariantCulture));
+                                animation.frames.Add(frame);
+                            }
+                            (layer as Scene.Layers.ImageLayer).animations.Add(
+                                animationElement.Attribute("Name").Value,animation);
+                        }
+                        if (node.Attribute("CurrentAnimation") != null)
+                            (layer as Scene.Layers.ImageLayer).currentAnimation = node.Attribute("CurrentAnimation").Value;
                         scene.layers.Add(node.Attribute("Name").Value,
                             layer);
                     }

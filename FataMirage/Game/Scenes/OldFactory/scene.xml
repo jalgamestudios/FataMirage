@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Scene>
-  <ImageLayer Depth="1" Texture="background" Name="background">
+  <ImageLayer Depth="1" Texture="background" Name="background" CurrentAnimation="terribleFlicker">
+    <Animation Name="terribleFlicker">
+      <Frame Texture="background" Duration="1" />
+      <Frame Texture="stones" Duration="0.5"/>
+      <Frame Texture="lighting" Duration="0.3"/>
+    </Animation>
   </ImageLayer>
   <ImageLayer Depth="0.91" Texture="stones" Name="stones" />
   <ImageLayer Depth="0.5" Texture="lighting" Name="lighting" />

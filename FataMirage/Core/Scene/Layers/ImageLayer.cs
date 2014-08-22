@@ -15,7 +15,19 @@ namespace FataMirage.Core.Scene.Layers
         /// <summary>
         /// The texture the ImageLayer will display
         /// </summary>
-        Graphics.Texture texture;
+        Graphics.Texture texture
+        {
+            get
+            {
+                if (currentAnimation == "#none")
+                    return defaultTexture;
+                else
+                    return animations[currentAnimation].currentTexture;
+            }
+        }
+        public string currentAnimation;
+        Graphics.Texture defaultTexture;
+        public Dictionary<string, Graphics.Animation> animations;
         /// <summary>
         /// Weather the layer is visible (this will use opacity to get and set values)
         /// </summary>
@@ -45,8 +57,10 @@ namespace FataMirage.Core.Scene.Layers
         public ImageLayer(Graphics.Texture texture, float depth)
         {
             this._zPos = depth;
-            this.texture = texture;
+            this.defaultTexture = texture;
+            this.currentAnimation = "#none";
             this.opacity = 1;
+            this.animations = new Dictionary<string, Graphics.Animation>();
         }
         /// <summary>
         /// Created a new image layer and loads the texture at the given location
@@ -56,8 +70,10 @@ namespace FataMirage.Core.Scene.Layers
         public ImageLayer(string fileName, float depth)
         {
             this._zPos = depth;
-            this.texture = new Graphics.Texture(fileName);
+            this.defaultTexture = new Graphics.Texture(fileName);
+            this.currentAnimation = "#none";
             this.opacity = 1;
+            this.animations = new Dictionary<string, Graphics.Animation>();
         }
         /// <summary>
         /// Creates a new image layer that is fully visible
@@ -68,8 +84,10 @@ namespace FataMirage.Core.Scene.Layers
         public ImageLayer(Graphics.Texture texture, float depth, float opacity)
         {
             this._zPos = depth;
-            this.texture = texture;
+            this.defaultTexture = texture;
+            this.currentAnimation = "#none";
             this.opacity = opacity;
+            this.animations = new Dictionary<string, Graphics.Animation>();
         }
         /// <summary>
         /// Created a new image layer and loads the texture at the given location
@@ -80,8 +98,10 @@ namespace FataMirage.Core.Scene.Layers
         public ImageLayer(string fileName, float depth, float opacity)
         {
             this._zPos = depth;
-            this.texture = new Graphics.Texture(fileName);
+            this.defaultTexture = new Graphics.Texture(fileName);
+            this.currentAnimation = "#none";
             this.opacity = opacity;
+            this.animations = new Dictionary<string, Graphics.Animation>();
         }
         /// <summary>
         /// Exposes the update method
@@ -110,7 +130,8 @@ namespace FataMirage.Core.Scene.Layers
         /// <param name="elapsedTime">The time since the last call of this method, measured in seconds</param>
         void _update(float elapsedTime)
         {
-            
+            if (currentAnimation != "#none")
+                animations[currentAnimation].update(elapsedTime);
         }
         /// <summary>
         /// Draws the layer

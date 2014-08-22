@@ -31,6 +31,11 @@ namespace FataMirage.Core.Graphics
                 textureAtlas.Add(name, texture);
             textureName = name;
         }
+        public static void preloadTexture(string fileName)
+        {
+            if (!textureAtlas.ContainsKey(fileName))
+                textureAtlas.Add(fileName, Stator.contentManager.Load<Texture2D>(fileName));
+        }
         public Color GetPixel(int x, int y)
         {
             return GetPixels()[x + (y * texture.Width)];

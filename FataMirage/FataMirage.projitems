@@ -154,6 +154,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Game\State.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Game\Storage\LoadGame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Game\Storage\SaveGame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Animation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Manager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Scaler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Graphics\Settings.cs" />
